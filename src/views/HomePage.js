@@ -1,8 +1,12 @@
 import React from 'react';
-import App from '../components/HomePage/App';
+import Home from '../components/HomePage/App';
+import Login from '../components/LoginPage/App';
 
-const HomePage = () => (
-  <App />
+
+export const HomePage = () => (
+  <Home />
 );
 
-export default HomePage;
+export const LoginPage = () => (
+  <Login />
+);
