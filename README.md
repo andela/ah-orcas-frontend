@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/andela/ah-orcas-frontend
+.svg?branch=develop)](https://travis-ci.org/andela/ah-orcas-frontend)
+[![Coverage Status](https://coveralls.io/repos/github/andela/ah-orcas-frontend/badge.svg?branch=develop&service=github)](https://coveralls.io/github/andela/ah-orcas-frontend?branch=develop&service=github)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
