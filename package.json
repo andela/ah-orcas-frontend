@@ -20,7 +20,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "coverage": "react-scripts test --env=jsdom --coverage",
     "coveralls": "react-scripts test --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
