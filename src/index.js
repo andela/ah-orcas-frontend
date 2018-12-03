@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import './assets/styles/index.css';
-import Route from './routes/Routes';
+import { Routes } from './routes/Routes';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Route />
+    <Routes />
   </Provider>,
   document.getElementById('root'),
 );
