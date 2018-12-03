@@ -1,0 +1,17 @@
+.navbutton {
+  border-radius: 10px;
+}
+
+$color-primary: #f5f5f5;
+$color-font: #424242;
+
+.footer {
+  background-color: $color-primary;
+  bottom: 0;
+  color: $color-font;
+  font-size: 1vw;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
