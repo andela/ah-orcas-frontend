@@ -4,6 +4,7 @@ export const initialState = {
   success: false,
   status: 'error',
   visible: false,
+  message: '',
 };
 
 function registration(state = initialState, action) {
@@ -11,9 +12,12 @@ function registration(state = initialState, action) {
     case userConstants.REGISTER_REQUEST:
       return { };
     case userConstants.REGISTER_SUCCESS:
-      return { success: true, status: 'success', visible: true };
+      return { success: true,
+        status: 'success',
+        visible: true,
+        message: 'You have been successfully registered, kindly check your email to verify your account' };
     case userConstants.REGISTER_FAILURE:
-      return { success: false, status: 'error', visible: false };
+      return { success: false, status: 'error', visible: true, message: action.user };
     default:
       return state;
   }

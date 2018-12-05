@@ -4,12 +4,14 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 import signUpRequest from '../../actions/signup.actions';
-import Form from './formComponent';
+import { Form } from './formComponent';
 import 'bootstrap';
 import '../style.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const image = require('../../assets/images/blog-49006_640.png');
+
+let popup = '';
 
 class RegisterPage extends React.Component {
   constructor(props) {
@@ -30,24 +32,36 @@ class RegisterPage extends React.Component {
     handleSubmit = () => {
       this.setState({ submitted: true });
       const { username, email, password } = this.state;
-      const { signUp } = this.props;
+      const { signUp, success } = this.props;
       if (username && email && password) {
         signUp({ ...this.state });
+      } else if (success === false) {
+        this.errorMessage();
       }
     };
 
-    successMessage = () => (
-      <div className="text-success">
-        <h6> You have successfully signed up.</h6>
-        <h6>Kindly check your email to verify your account.</h6>
-      </div>
-    );
+    errorMessage = () => {
+      const { message, success } = this.props;
 
-    errorMessage = () => (
-      <div className="text-danger">
-        <h6> Username/email already exists. Try another one</h6>
-      </div>
-    );
+      if (message instanceof Array) {
+        popup = message.map(mess => (
+          <div
+            className={success ? 'text-success' : 'text-danger'}
+          >
+            {mess}
+          </div>
+        ));
+      } else {
+        popup = (
+          <div>
+            {' '}
+            {message}
+            {' '}
+          </div>
+        );
+      }
+      return <div className={success ? 'text-success' : 'text-danger'}>{popup}</div>;
+    };
 
     handleChange =(e) => {
       const { name, value } = e.target;
@@ -65,7 +79,10 @@ class RegisterPage extends React.Component {
                 <div className="signup-form ">
                   <h2 className="form-title">Sign up</h2>
                   <form className="register-form" id="signup-form" onSubmit={this.handleSubmit}>
-                    { visible && this.successMessage()}
+                    <div>
+                      { visible && this.errorMessage()}
+                    </div>
+
                     <Div {...this.state} />
                     <Errors {...this.state} />
                     <Form
@@ -90,7 +107,7 @@ class RegisterPage extends React.Component {
 }
 
 // this component is meant to soleve code climate issue of the same code appearing App.jsx
-export const SignupLoginLink = ({imageClass, image, link }) => (
+export const SignupLoginLink = ({ imageClass, image, link }) => (
   <div className="col-md-5">
     <div className={imageClass}>
       <figure><img src={image} alt="" /></figure>
@@ -113,13 +130,13 @@ export const Div = ({ ...props }) => {
   return (
     <div className="alert-info, form-group" {...rest}>
       {submitted && !username
-            && <div className="help-block, text-danger">Username is required</div>}
+            && <div className="text-danger">Username is required</div>}
       {submitted && !email
-              && <div className="help-block, text-danger">Enter a valid email</div>}
+              && <div className="text-danger">Enter a valid email (e.g email@email.com)</div>}
       {submitted && !password
-            && <div className="help-block, text-danger">Password is required</div> }
+            && <div className="text-danger">Password is required</div> }
       {submitted && !confirmPassword && (
-      <div className="help-block, text-danger">Confirm Password is required</div>)}
+      <div className="text-danger">Confirm Password is required</div>)}
     </div>
   );
 };
@@ -164,6 +181,7 @@ RegisterPage.defaultProps = {
 };
 const mapStateToProps = state => ({
   visible: state.registration.visible,
+  message: state.registration.message,
   success: state.registration.success,
 });
 

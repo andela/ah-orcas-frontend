@@ -1,4 +1,3 @@
-// import api from '../api';
 import axios from 'axios';
 import userConstants from '../constants/signup.constants';
 
@@ -25,8 +24,14 @@ const signUpRequest = data => (dispatch) => {
     })
     .catch((error) => {
       signUpError(error.response);
+      if (error.response.data.errors.username) {
+        dispatch(signUpError(error.response.data.errors.username));
+      } else if (error.response.data.errors.email) {
+        dispatch(signUpError(error.response.data.errors.email));
+      } else if (error.response.data.errors.password) {
+        dispatch(signUpError(error.response.data.errors.password));
+      }
     });
 };
-
 
 export default signUpRequest;
