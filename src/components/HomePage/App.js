@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.scss';
+import RegisterPage from '../SignUpPage/registerComponent';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <p>Orcas React App</p>
-      </div>
-    );
-  }
-}
+
+const App = () => (
+  <RegisterPage />
+);
 
 export default App;

@@ -1,13 +1,16 @@
 /* eslint-disable max-len */
-import './App.scss';
+import '../style.scss';
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import loginUser from '../../actions/login.action';
 import Alert from './alert';
-import FormGroups from './form';
 import SocialLoginConnected from './SocialLogin';
+import FormGroups from './form';
+import { SignupLoginLink } from '../SignUpPage/registerComponent';
+
+const image = require('../../assets/images/1505193005.jpg');
 
 export class Login extends React.Component {
   constructor(props) {
@@ -43,27 +46,51 @@ export class Login extends React.Component {
       const { errorVisiblity } = this.state;
       const { email, password } = this.state;
       return (
-        <div className="login">
-          {userData.errors && errorVisiblity
-            ? <Alert message={userData.responseData.data.errors.error[0]} errorVisiblity={this.hideErrorDisplay} /> : ''}
-          <SocialLoginConnected />
-          <form onSubmit={this.handleSubmit}>
-            <p>OR</p>
-            <FormGroups email={email} password={password} handleChange={this.handleChange} />
-            <Button
-              id="button"
-              block
-              bsSize="large"
-              bsStyle="primary"
-              type="submit"
-            >
-             Login
-            </Button>
-          </form>
-        </div>
+        <section className="sign-in">
+          <div className="container">
+            <div className="signin-content col-md-10">
+              <SignupLoginLink imageClass="signin-image" image={image} link="/register" />
+              <div className="signin-form" />
+              <div className="col-md-5">
+                <h2 className="form-title">Sign In</h2>
+                <SocialLoginUl />
+                <span className="social-label">Or</span>
+                <form method="POST" className="register-form" id="login-form">
+                  {userData.errors && errorVisiblity
+                    ? <Alert message={userData.responseData.data.errors.error[0]} errorVisiblity={this.hideErrorDisplay} /> : ''}
+                  <FormGroups
+                    email={email}
+                    password={password}
+                    handleChange={this.handleChange}
+                    onSubmit={this.handleSubmit}
+                  />
+                  <FormGroup />
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
       );
     }
 }
+
+export const SocialLoginUl = () => (
+  <div className="social-login">
+    <ul className="socials">
+      <SocialLoginConnected />
+    </ul>
+  </div>
+);
+
+// solve code length
+export const FormGroup = () => (
+  <div className="form-group form-button">
+    <input type="submit" name="signin" id="signin" className="form-submit" value="Log in" />
+    <div className="forgot-password">
+      <Link to="/register" className="btn btn-link">Forgot Password?</Link>
+    </div>
+  </div>
+);
 
 Login.propTypes = {
   dispatch: PropTypes.func.isRequired,
