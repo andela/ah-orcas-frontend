@@ -1,11 +1,24 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from '../App';
+import { shallow } from 'enzyme';
+import { Login } from '../App';
 
-it('renders Login without crashing', () => {
-  const div = document.createElement('nav');
-  const Login = App;
-  ReactDOM.render(<Login />, div);
-  ReactDOM.unmountComponentAtNode(div);
+function setup() {
+  const props = {
+    login: jest.fn(),
+  };
+  const enzymeWrapper = shallow(<Login {...props} />);
+  return {
+    props,
+    enzymeWrapper,
+  };
+}
+
+describe('login components', () => {
+  describe('login', () => {
+    it('should render self and subcomponents', () => {
+      const { enzymeWrapper } = setup();
+      expect(enzymeWrapper.find('#button').length).toBe(1);
+    });
+  });
 });

@@ -13,7 +13,7 @@ export const NavBarComponent = () => (
       </ul>
       <ul className="floated right nav-div nav-link">
         <li className="rela-inline">Sign up</li>
-        <li className="rela-inline">Sign in</li>
+        <li className="rela-inline"><a href="/login">Sign in</a></li>
       </ul>
     </div>
   </div>
