@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from '../components/HomePage/App';
-import Login from '../components/LoginPage/App';
 import { NavBarComponent, FooterComponent } from '../components/NavBar/App';
+import SocialAuth from '../components/LoginPage/SocialLogin';
 
 
 export const HomePage = () => (
@@ -9,7 +9,7 @@ export const HomePage = () => (
 );
 
 export const LoginPage = () => (
-  <Login />
+  <SocialAuth />
 );
 
 export const Header = () => (
