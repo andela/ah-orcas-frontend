@@ -1,5 +1,6 @@
-[![Build Status](https://travis-ci.org/andela/ah-orcas-frontend.svg?branch=develop)](https://travis-ci.org/andela/ah-orcas-frontend) [![Coverage Status](https://coveralls.io/repos/github/andela/ah-orcas-frontend/badge.svg?branch=develop)](https://coveralls.io/github/andela/ah-orcas-frontend?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/76fef8dadeb8dafcd4b8/maintainability)](https://codeclimate.com/github/andela/ah-orcas-frontend/maintainability) 
-
+[![Build Status](https://travis-ci.org/andela/ah-orcas-frontend.svg?branch=develop&cacheBuster=1)](https://travis-ci.org/andela/ah-orcas-frontend)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/76fef8dadeb8dafcd4b8/test_coverage)](https://codeclimate.com/github/andela/ah-orcas-frontend/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/76fef8dadeb8dafcd4b8/maintainability)](https://codeclimate.com/github/andela/ah-orcas-frontend/maintainability)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

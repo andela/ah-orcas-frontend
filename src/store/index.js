@@ -1,8 +1,9 @@
 import { createStore, applyMiddleware } from 'redux';
+import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
+
 import allReducers from '../reducers';
 
-
-export const store = createStore(allReducers, composeWithDevTools(applyMiddleware(thunk)));
+const logger = createLogger();
+export const store = createStore(allReducers, applyMiddleware(logger, thunk));
 export default store;

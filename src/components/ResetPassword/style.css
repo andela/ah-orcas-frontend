@@ -1,0 +1,6 @@
+.outer {
+  display: block;
+  float: center;
+  clear: both;
+  margin-top: 10%;
+}

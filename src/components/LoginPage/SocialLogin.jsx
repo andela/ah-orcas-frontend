@@ -1,14 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import './App.scss';
+// import './App.scss';
 import { connect } from 'react-redux';
 import SocialAuthAct from '../../actions/sociallogin.action';
 // import { SocialAuthReducer } from '../../reducers/socialauthreducer';
 import Buttons from './socialButton';
 
 
-export class SocialAuth extends Component {
+class SocialAuth extends Component {
     state = {
       access_token: '',
       provider: '',
