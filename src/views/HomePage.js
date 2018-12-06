@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from '../components/HomePage/App';
 import Login from '../components/LoginPage/App';
-import { Bar, Foot } from '../components/NavBar/App';
+import { NavBar, Foot } from '../components/NavBar/App';
 
 
 export const HomePage = () => (
@@ -13,7 +13,7 @@ export const LoginPage = () => (
 );
 
 export const Header = () => (
-  <Bar />
+  <NavBar />
 );
 
 export const Footer = () => (
