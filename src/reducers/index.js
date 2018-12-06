@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-
+import SocialAuthReducer from './socialauthreducer';
 import articles from './articles';
 
 /*
@@ -9,6 +9,7 @@ import articles from './articles';
 
 const allReducers = combineReducers({
   articles,
+  social: SocialAuthReducer,
 });
 
 export default allReducers;

@@ -6,6 +6,8 @@ import './assets/styles/index.css';
 import { Routes } from './routes/Routes';
 import * as serviceWorker from './serviceWorker';
 
+require('dotenv').config();
+
 ReactDOM.render(
   <Provider store={store}>
     <Routes />
