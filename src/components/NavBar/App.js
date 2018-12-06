@@ -3,15 +3,20 @@ import './App.scss';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 export const NavBarComponent = () => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <button type="button" className="navbar-brand" href="#">Authors Haven</button>
-    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon" />
-    </button>
-  </nav>
-
+  <div className="nav-bar">
+    <div className="horz-center nav-container">
+      <div className="floated logo">authors haven</div>
+      <ul className="floated nav-div nav-links">
+        <li className="rela-inline">Home</li>
+        <li className="rela-inline">Profile</li>
+      </ul>
+      <ul className="floated right nav-div nav-link">
+        <li className="rela-inline">Sign up</li>
+        <li className="rela-inline">Sign in</li>
+      </ul>
+    </div>
+  </div>
 );
 
 export const FooterComponent = () => (
