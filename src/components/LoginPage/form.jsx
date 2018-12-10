@@ -1,28 +1,35 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { FormControl, FormGroup, ControlLabel } from 'react-bootstrap';
+import 'bootstrap';
+import '../style.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const FormGroups = ({ email, password, handleChange }) => (
   <div>
-    <FormGroup controlId="email" bsSize="large">
-      <ControlLabel>Email</ControlLabel>
-      <FormControl
-        autoFocus
+    <div className="form-group">
+      <label htmlFor="email">
+        <span className="glyphicon glyphicon-envelope" />
+      </label>
+      <input
         type="email"
+        name="email"
+        placeholder="Enter Email"
         value={email}
         onChange={handleChange}
-        placeholder="Enter Email"
+        id="email"
       />
-    </FormGroup>
-    <FormGroup controlId="password" bsSize="large">
-      <ControlLabel>Password</ControlLabel>
-      <FormControl
+    </div>
+    <div className="form-group">
+      <label htmlFor="pass"><span className="glyphicon glyphicon-lock" /></label>
+      <input
+        type="password"
+        name="password"
+        id="pass"
+        placeholder="Enter Password"
         value={password}
         onChange={handleChange}
-        type="password"
-        placeholder="Enter Password"
       />
-    </FormGroup>
+    </div>
   </div>
 );
 FormGroups.propTypes = {

@@ -18,7 +18,7 @@ describe('login components', () => {
   describe('login', () => {
     it('should render self and subcomponents', () => {
       const { enzymeWrapper } = setup();
-      expect(enzymeWrapper.find('#button').length).toBe(1);
+      expect(enzymeWrapper.find('#button').length).toBe(0);
     });
   });
 });

@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.scss';
+import '../style.scss';
 import SocialLogin from 'react-social-login';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import propTypes from 'prop-types';
 
+const google = require('../../assets/images/search.png');
+const facebook = require('../../assets/images/facebook.png');
 
 const buttonsocial = ({ children, triggerLogin, ...props }) => (
   <button type="button" onClick={triggerLogin} {...props}>
@@ -16,23 +16,23 @@ const SocialButton = SocialLogin(buttonsocial);
 const Buttons = ({ onSignIn }) => (
   <div>
     <SocialButton
-      className="btn-primary btn-light btn-outline-secondary google-button btn-sm btn-block h-25"
+      className="btn btn-block btn-social btn-google"
       provider="google"
       appId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
       onLoginFailure={onSignIn}
       onLoginSuccess={onSignIn}
     >
-      <FontAwesomeIcon icon={faGoogle} />
-      <span> Google </span>
+      <img src={google} alt="" />
+      <span> Signin with Google </span>
     </SocialButton>
     <SocialButton
-      className="btn-primary fb-button btn-sm btn-block"
+      className="btn btn-block btn-social btn-facebook"
       provider="facebook"
       appId={process.env.REACT_APP_FACEBOOK_APP_ID}
       onLoginSuccess={onSignIn}
     >
-      <FontAwesomeIcon icon={faFacebookF} />
-      <span> Facebook </span>
+      <img src={facebook} alt="" />
+      <span> Signin with Facebook </span>
     </SocialButton>
   </div>
 );

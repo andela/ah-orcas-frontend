@@ -19,8 +19,8 @@ describe('social login components', () => {
   describe('login', () => {
     it('should render self and subcomponents', () => {
       const { enzymeWrapper } = setup();
-      expect(enzymeWrapper.find('.btn-primary.google-button').length).toBe(1);
-      expect(enzymeWrapper.find('.btn-primary.fb-button').length).toBe(1);
+      expect(enzymeWrapper.find('.btn-google').length).toBe(1);
+      expect(enzymeWrapper.find('.btn-facebook').length).toBe(1);
     });
   });
 });
