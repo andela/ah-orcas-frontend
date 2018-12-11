@@ -98,7 +98,7 @@ class RegisterPage extends React.Component {
                   </form>
                 </div>
               </div>
-              <SignupLoginLink imageClass="signup-image" image={image} link="/login" />
+              <SignupLoginLink imageClass="signup-image" image={image} link="/login" text="Already have an account?" />
             </div>
           </div>
         </section>
@@ -107,11 +107,11 @@ class RegisterPage extends React.Component {
 }
 
 // this component is meant to soleve code climate issue of the same code appearing App.jsx
-export const SignupLoginLink = ({ imageClass, image, link }) => (
+export const SignupLoginLink = ({ imageClass, image, link, text }) => (
   <div className="col-md-5">
     <div className={imageClass}>
       <figure><img src={image} alt="" /></figure>
-      <Link to={link} className="btn">Already have an account?</Link>
+      <Link to={link} className="btn">{text}</Link>
     </div>
   </div>
 );

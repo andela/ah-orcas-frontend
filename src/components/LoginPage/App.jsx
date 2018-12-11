@@ -11,16 +11,36 @@ import FormGroups from './form';
 import { SignupLoginLink } from '../SignUpPage/registerComponent';
 const image = require('../../assets/images/1505193005.jpg');
 
+function validateLoginInputs(email, password) {
+  // store errors in arraya and render as needed.
+  const errors = [];
+  if (email.length < 5) {
+    errors.push('Email should be at least 5 charcters long');
+  }
+  if (email.split('').filter(x => x === '@').length !== 1) {
+    errors.push('Email should contain a @');
+  }
+  if (email.indexOf('.') === -1) {
+    errors.push('Email should contain at least one dot');
+  }
+
+  if (password.length < 8) {
+    errors.push('Password should be at least 8 characters long');
+  }
+
+  return errors;
+}
+
 export class Login extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.hideErrorDisplay = this.hideErrorDisplay.bind(this);
     this.state = {
       email: '',
       password: '',
-      errorVisiblity: true,
+      errors: [],
+      logged: false,
     };
   }
 
@@ -33,37 +53,40 @@ export class Login extends React.Component {
     handleSubmit = (event) => {
       event.preventDefault();
       const { dispatch } = this.props;
-      dispatch(loginUser(this.state));
-    }
-
-    hideErrorDisplay = () => {
-      this.setState({ errorVisiblity: false });
+      const { email, password } = this.state;
+      const errors = validateLoginInputs(email, password);
+      if (errors.length > 0) {
+        this.setState({ errors });
+        return;
+      }
+      dispatch(loginUser(this.state, this.props));
     }
 
     render() {
       const { userData } = this.props;
-      const { errorVisiblity } = this.state;
-      const { email, password } = this.state;
+      const { email, password, errors } = this.state;
       return (
         <section className="sign-in">
           <div className="container">
             <div className="signin-content col-md-10">
-              <SignupLoginLink imageClass="signin-image" image={image} link="/register" />
+              <SignupLoginLink imageClass="signin-image" image={image} link="/register" text="Click here to register"/>
               <div className="signin-form" />
               <div className="col-md-5">
                 <h2 className="form-title">Sign In</h2>
                 <SocialLoginUl />
                 <span className="social-label">Or</span>
                 <form method="POST" className="register-form" id="login-form">
-                  {userData.errors && errorVisiblity
-                    ? <Alert message={userData.responseData.data.errors.error[0]} errorVisiblity={this.hideErrorDisplay} /> : ''}
+                  {errors.map(error => (
+                    <p className="errors" key={error}>{error}</p>
+                  ))}
+                  {userData.errors
+                    ? <Alert message={userData.responseData.data.errors.error[0]} /> : ''}
                   <FormGroups
                     email={email}
                     password={password}
                     handleChange={this.handleChange}
-                    onSubmit={this.handleSubmit}
                   />
-                  <FormGroup />
+                  <FormGroup handleSubmit={this.handleSubmit} />
                 </form>
               </div>
             </div>
@@ -82,14 +105,18 @@ export const SocialLoginUl = () => (
 );
 
 // solve code length
-export const FormGroup = () => (
+export const FormGroup = ({ handleSubmit }) => (
   <div className="form-group form-button">
-    <input type="submit" name="signin" id="signin" className="form-submit" value="Log in" />
+    <input type="submit" name="signin" id="signin" className="form-submit" value="Log in" onClick={handleSubmit} />
     <div className="forgot-password">
       <Link to="/resetPassword" className="btn btn-link">Forgot Password?</Link>
     </div>
   </div>
 );
+
+FormGroup.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};
 
 Login.propTypes = {
   dispatch: PropTypes.func.isRequired,

@@ -24,7 +24,7 @@ const FormGroups = ({ email, password, handleChange }) => (
       <input
         type="password"
         name="password"
-        id="pass"
+        id="password"
         placeholder="Enter Password"
         value={password}
         onChange={handleChange}

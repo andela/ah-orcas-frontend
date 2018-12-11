@@ -6,6 +6,7 @@ $color-main: #2ebaae;
 $color-bg: #fff;
 $color-underline: #999;
 $color-secondary: #222;
+$color-warning: #ff0000;
 
 .display-flex,
 .display-flex-center,
@@ -299,4 +300,8 @@ label {
 .social-login {
   margin-left: -1em;
   margin-top: -1em;
+}
+
+.errors {
+  color: $color-warning;
 }
