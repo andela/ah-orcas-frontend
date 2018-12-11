@@ -5,47 +5,35 @@ import { bindActionCreators } from 'redux';
 import { viewSingleArticle } from '../../actions/articles.action';
 import { Title, Description, Body } from './ArticleViewComponents';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: '',
-      descripton: '',
-      body: '',
-    };
-  }
+const App = (props) => {
+  const slug = localStorage.getItem('slug');
+  const { singleArticle, article } = props;
+  singleArticle('this-is-an-awesome-title');
 
-  componentDidMount() {
-    const slug = localStorage.getItem('slug');
-    this.props.viewSingleArticle(slug);
-    this.setState({
-      title: this.props.results.title,
-    });
-    console.error(this.props.results);
-  }
-
-  render() {
-    return (
-      <div>
-        <Title />
-        <Description />
-        <Body />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Title title={article.title} />
+      <br />
+      <Description description={article.description} />
+      <br />
+      <Body body={article.body} />
+    </div>
+  );
+};
 
 App.propTypes = {
-  results: propTypes.object,
+  singleArticle: propTypes.func,
+  article: propTypes.object,
 };
 
 App.defaultProps = {
-  results: propTypes.object,
+  singleArticle: propTypes.func,
+  article: propTypes.object,
 };
 
 function mapStateToProps(state) {
   return {
-    results: state.viewarticle,
+    article: state.article,
   };
 }
 

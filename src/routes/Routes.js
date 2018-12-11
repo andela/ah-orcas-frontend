@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { HomePageView, LoginPage, ArticleComponent, Register, Header, Footer, ArticleInputComponents, ResetPassword } from '../views/HomePage';
+import { HomePageView, LoginPage, ArticleComponent, Register, Header, Footer, ArticleInputComponents, ResetPassword, DeleteArticle } from '../views/HomePage';
 
 export const Main = () => (
   <Switch>
@@ -10,7 +10,7 @@ export const Main = () => (
     <Route path="/register" component={Register} />
     <Route path="/resetPassword" component={ResetPassword} />
     <Route name="article" exact path="/article/detail/:slug" component={ArticleComponent} />
-
+    <Route path="/delete/" component={DeleteArticle} />
   </Switch>
 );
 

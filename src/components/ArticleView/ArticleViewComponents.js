@@ -21,8 +21,6 @@ export const Description = (props) => {
 export const Body = (props) => {
   const { body } = props;
   return (
-    <p>
-      {body}
-    </p>
+    <p>{body}</p>
   );
 };

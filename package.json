@@ -29,6 +29,7 @@
     "react-twitter-auth": "0.0.12",
     "reactstrap": "^6.5.0",
     "react-transition-group": "^2.5.0",
+    "react-twitter-auth": "0.0.12",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.7",
     "redux-logger": "^3.0.6",

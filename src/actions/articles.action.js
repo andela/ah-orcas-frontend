@@ -1,9 +1,9 @@
 
 import axios from 'axios';
-import { GET_ARTICLES, ADD_ARTICLE, ADD_TAGS, VIEW_ARTICLE } from '../constants/articles';
+import { GET_ARTICLES, ADD_ARTICLE, ADD_TAGS, VIEW_ARTICLE, DELETE_ARTICLE, DELETE_ARTICLE_FAILURE, DELETE_ARTICLE_SUCCESS } from '../constants/articles';
 import baseUrl from '../constants/url';
 
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDUxMTUwNDksImlhdCI6MTU0NDUxMDI0OSwiaWQiOjUxfQ.sdJ8mdTXaxB4JPMUPNvC63x4uLiHMObFq4kdODHm5iA';
+const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDUyMDk5MTAsImlhdCI6MTU0NDYwNTExMCwiaWQiOjkxfQ.5CmLxpWm3to8JVHa_iRUjdsh4vhrs24AVUK8ED9ZTUo';
 axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 
 export const getAllArticles = () => (dispatch) => {
@@ -13,6 +13,7 @@ export const getAllArticles = () => (dispatch) => {
         if (!article.image) {
           article.image = 'https://picsum.photos/50/100/?random';
         }
+        return article;
       });
       dispatch({
         type: GET_ARTICLES,
@@ -29,8 +30,7 @@ export const postArticle = data => (dispatch) => {
         payload: article.data,
       },
     );
-  }).catch((error) => {
-    console.error(error.response);
+  }).catch(() => {
   });
 };
 
@@ -42,8 +42,7 @@ export const viewSingleArticle = slug => (dispatch) => {
       article: article.data,
     },
     );
-  }).catch((error) => {
-    console.error(error.message);
+  }).catch(() => {
   });
 };
 

@@ -6,7 +6,7 @@ import HomePage from '../components/HomePage/App';
 import ArticleInput from '../components/ArticleCreate/App';
 import Article from '../components/ArticleView/App';
 import { NavBarComponent, FooterComponent } from '../components/NavBar/App';
-import ResetPasswordComp from '../components/ResetPassword/ResetPassword';
+import DeleteArticleConected from '../components/ArticleDelete/DeleteArticle';
 
 
 export const HomePageView = () => (
@@ -39,4 +39,7 @@ export const ArticleInputComponents = () => (
 
 export const ArticleComponent = () => (
   <Article />
+);
+export const DeleteArticle = ({ props }) => (
+  <DeleteArticleConected {...props} />
 );

@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import registration from './signup.reducer';
 import alert from './alert.reducer';
 import SocialAuthReducer from './socialauthreducer';
-import { articles, tags, viewarticle } from './articlesReducer';
+import { articles, viewarticle, deleteArticle } from './articlesReducer';
 import loginReducer from './loginReducer';
 
 /*
@@ -12,11 +12,11 @@ import loginReducer from './loginReducer';
 const allReducers = combineReducers({
   viewarticle,
   articles,
-  tags,
   social: SocialAuthReducer,
   login: loginReducer,
   registration,
   alert,
+  deleteReducer: deleteArticle,
 });
 
 export default allReducers;
