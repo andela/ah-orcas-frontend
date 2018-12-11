@@ -9,7 +9,6 @@ import Alert from './alert';
 import SocialLoginConnected from './SocialLogin';
 import FormGroups from './form';
 import { SignupLoginLink } from '../SignUpPage/registerComponent';
-
 const image = require('../../assets/images/1505193005.jpg');
 
 export class Login extends React.Component {
@@ -87,7 +86,7 @@ export const FormGroup = () => (
   <div className="form-group form-button">
     <input type="submit" name="signin" id="signin" className="form-submit" value="Log in" />
     <div className="forgot-password">
-      <Link to="/register" className="btn btn-link">Forgot Password?</Link>
+      <Link to="/resetPassword" className="btn btn-link">Forgot Password?</Link>
     </div>
   </div>
 );
