@@ -23,6 +23,7 @@ export const Header = () => (
 export const Footer = () => (
   <FooterComponent />
 );
+
 export const Register = () => (
   <RegisterPage />
 );
