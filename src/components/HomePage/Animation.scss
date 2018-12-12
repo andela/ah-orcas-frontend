@@ -1,8 +1,71 @@
-.card {
+$primarycolor: #eee;
+$darkcolor: #888;
+$color-primary-dark: #303A52;
+$color-accent: #9E579D;
+$color-white: snow;
+$navBar-height: 100%;
+
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+.slide {
   -ms-transform: perspective(1000px);
   -moz-transform: perspective(1000px);
   -ms-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   perspective: 1000;
   transition: all 0.5s cubic-bezier(0.05, 0.05, 0.05, 0.05);
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  90%{
+    opacity: 0.5;
+  }
+  95%{
+    opacity: 0.3;
+  }
+  100%{
+    opacity: 0;
+  }
+
+}
+
+.top{
+  animation: fadeout 8s;
+}
+
+.intro-text{
+    position: relative;
+    top: 50%;
+    width: 20em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 400%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 8s steps(44) infinite,
+             blinkTextCursor 500ms steps(44) infinite normal,
+
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 20em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
 }

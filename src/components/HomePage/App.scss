@@ -1,3 +1,4 @@
+
 //color variables
 $border-color: #e9eaea;
 $btn-color: #3b5998;
@@ -6,6 +7,16 @@ $font-color: #424242;
 $primary-color: #f5f5f5;
 $solid-primary: #000;
 $webkit: #3e3e40;
+
+$lightprimarycolor: #FFFFFF;
+$darkcolor: #888;
+$primarycolor: #FFFFFF;
+$color-primary-dark: #FFFFFF;
+$color-accent: #FFFFFF;
+$color-white: snow;
+$black: black;
+$background-image: "images/intro.jpg";
+$navBar-height: 100%;
 
 .myform {
   border-radius: 2em;
@@ -87,4 +98,102 @@ span a {
   margin-bottom: 1rem;
   padding: 0.75rem 1.25rem;
   position: relative;
+}
+
+.articlecard {
+  margin-top: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  font-family: 'Bitter', serif;
+}
+
+.intro-text {
+  font-size: 5em;
+  color: $black;
+  opacity: 1;
+
+  padding-top: 5%;
+  padding-left: 10%;
+}
+
+
+.title {
+  text-align: center;
+  color: $black;
+}
+
+.card:hover  {
+  box-shadow: 3px 3px 3px;
+  z-index: 1;
+}
+
+.description  {
+  font-family: 'Times New Roman';
+  overflow: auto;
+}
+
+.top {
+  margin: 0;
+  background-image: url($background-image);
+  position: relative;
+  width: 100%;
+  box-shadow: 5px 5px 5px $darkcolor;
+  height: 200px;
+  margin-bottom: 2%;
+  border-radius: 10px;
+  z-index: 9;
+  opacity: 0.8;
+}
+
+.btn:hover {
+  box-shadow: 1px 1px 1px $darkcolor;
+}
+.card {
+  border-radius: 10px;
+}
+
+.article-content {
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px $darkcolor;
+  margin-bottom: -1%;
+  padding: 1%;
+}
+
+.article-container {
+  padding-bottom: 5%;
+  background-color: $primarycolor;
+  padding-top: 5%;
+}
+.container-text {
+  background-color: $lightprimarycolor;
+  border-radius: 10px;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  padding: 1%;
+  text-align: left;
+}
+
+.text {
+  margin-left: 1%;
+}
+
+.time {
+  float: right;
+  margin-left: 1%;
+}
+
+.clear {
+  clear: both;
+}
+
+.username {
+  float: left;
+  margin-left: 1%;
+}
+
+
+.userimage {
+  float: left;
+  margin: 1%;
+  width: 5%;
 }
