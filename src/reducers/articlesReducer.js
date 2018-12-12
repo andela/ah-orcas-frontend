@@ -7,6 +7,12 @@ const intialDeleteState = {
   deleted: false,
 };
 
+const initialDeleteState = {
+  isDeleting: false,
+  deleted: false,
+};
+
+
 export const articles = (state = initialState, action) => {
   switch (action.type) {
     case GET_ARTICLES:
@@ -19,11 +25,37 @@ export const articles = (state = initialState, action) => {
 export const viewarticle = (state = articleState, action) => {
   switch (action.type) {
     case VIEW_ARTICLE:
-      return action.article;
+      return action.payload;
     default:
       return state;
   }
 };
+
+export const deleteArticle = (state = initialDeleteState, action) => {
+  switch (action.type) {
+    case DELETE_ARTICLE_REQUEST:
+      return {
+        ...initialState,
+        isDeleting: false,
+        deleted: false,
+      };
+    default:
+      return state;
+  }
+};
+export const articleDeleting = (state = initialDeleteState, action) => {
+  switch (action.type) {
+    case DELETE_ARTICLE:
+      return {
+        ...initialState,
+        isDeleting: true,
+        deleted: false,
+      };
+    default:
+      return state;
+  }
+};
+
 
 
 export const deleteArticle = (state = intialDeleteState, action) => {
@@ -40,6 +72,9 @@ export const deleteArticle = (state = intialDeleteState, action) => {
         isDeleting: true,
         deleted: false,
       };
+
+export const articleDeleted = (state = initialDeleteState, action) => {
+  switch (action.type) {
     case DELETE_ARTICLE_SUCCESS:
       return {
         ...initialState,

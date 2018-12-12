@@ -2,6 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import './App.scss';
 import { viewSingleArticle } from '../../actions/articles.action';
 import { Title, Description, Body } from './ArticleViewComponents';
 

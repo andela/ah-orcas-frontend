@@ -37,10 +37,11 @@ export const postArticle = data => (dispatch) => {
 export const viewSingleArticle = slug => (dispatch) => {
   const url = `${baseUrl}/article/detail/${slug}/`;
   axios.get(url).then((article) => {
-    dispatch({
-      type: VIEW_ARTICLE,
-      article: article.data,
-    },
+    dispatch(
+      {
+        type: VIEW_ARTICLE,
+        payload: article.data,
+      },
     );
   }).catch(() => {
   });

@@ -1,0 +1,44 @@
+
+$border-color: #e9eaea;
+$btn-color: #3b5998;
+$focus-color: #007bff;
+$font-color: #424242;
+$primary-color: #f5f5f5;
+$solid-primary: #000;
+$webkit: #3e3e40;
+
+$lightprimarycolor: #FFFFFF;
+$darkcolor: #888;
+$primarycolor: #FFFFFF;
+$color-primary-dark: #FFFFFF;
+$color-accent: #FFFFFF;
+$color-white: snow;
+$black: black;
+$background-image: "images/intro.jpg";
+$navBar-height: 100%;
+
+
+
+.description{
+  width: 100%;
+  margin: 1%;
+  font-size: 1rem;
+  background-color: $primary-color;
+}
+
+.control-btn {
+  margin-right: 1%;
+  padding: 2%;
+}
+
+.edit {
+  margin-left: 1%;
+}
+
+.article-body {
+  font-size: 1.5rem;
+}
+
+.article-container{
+
+}
