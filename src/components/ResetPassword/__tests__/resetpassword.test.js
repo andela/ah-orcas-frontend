@@ -5,6 +5,7 @@ import { ResetPasswordComponent } from '../ResetPassword';
 function setup() {
   const props = {
     resetPass: jest.fn(),
+    sendEmail: jest.fn(),
   };
   const enzymeWrapper = shallow(<ResetPasswordComponent {...props} />);
   return {

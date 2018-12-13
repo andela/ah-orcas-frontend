@@ -1,9 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import wrapper from '../App';
+import { Provider } from 'react-redux';
+import { mount } from 'enzyme';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { store } from '../../../store';
+import App from '../App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<wrapper />, div);
-  ReactDOM.unmountComponentAtNode(div);
+it('renders register component without crashing', () => {
+  const wrapper = mount(
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>,
+  );
+  wrapper.find('#signup-form').simulate(
+    'submit',
+    { preventDefault() {} },
+  );
 });

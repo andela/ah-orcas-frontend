@@ -6,6 +6,7 @@ import AuthLogin from '../components/LoginPage/App';
 import RegisterPage from '../components/SignUpPage/registerComponent';
 // eslint-disable-next-line import/no-named-as-default
 import ResetPasswordComponent from '../components/ResetPassword/ResetPassword';
+import Profile from '../components/ProfilePage/Profile';
 
 
 export const HomePage = () => (
@@ -29,4 +30,8 @@ export const Register = () => (
 
 export const ResetPassword = () => (
   <ResetPasswordComponent />
+);
+
+export const ProfilePage = ({ ...props }) => (
+  <Profile {...props} />
 );

@@ -6,6 +6,7 @@ import { Login } from '../App';
 function setup() {
   const props = {
     login: jest.fn(),
+    dispatch: jest.fn(),
   };
   const enzymeWrapper = shallow(<Login {...props} />);
   return {
