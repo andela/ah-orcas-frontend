@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { GET_ARTICLES, ADD_ARTICLE, VIEW_ARTICLE, DELETE_ARTICLE, DELETE_ARTICLE_FAILURE, DELETE_ARTICLE_SUCCESS, UPDATE_ARTICLE } from '../constants/articles';
 import baseUrl from '../constants/url';
+import { avgRate } from './ratings.actions';
 
 const provideToken = () => {
   const { token } = JSON.parse(localStorage.getItem('user'));
@@ -43,6 +44,7 @@ export const postArticle = (data, cleardata, handleError) => (dispatch) => {
   });
 };
 
+
 export const viewSingleArticle = slug => (dispatch) => {
   provideToken();
   const url = `${baseUrl}article/detail/${slug}/`;
@@ -53,6 +55,9 @@ export const viewSingleArticle = slug => (dispatch) => {
         payload: article.data,
       },
     );
+    // dispatch the average ratings function
+    // displays the average ratings when the article component mounts
+    dispatch(avgRate(article.data.id));
   }).catch(() => {
   });
 };

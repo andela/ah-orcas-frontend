@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { store } from '../../../store';
+import store from '../../../store';
 import ArticleUpdate from '../App';
 
 function setup() {

@@ -1,0 +1,29 @@
+$color-bg: #fff;
+$color-main: #2ebaae;
+
+.my-btn {
+  background: $color-main;
+  border-bottom: 0;
+  color: $color-bg;
+  cursor: pointer;
+  float: right;
+  margin-right: 1.5em;
+  width: 8%;
+}
+
+.edit {
+  background: $color-main;
+}
+
+.mybtn {
+  background: none;
+}
+
+.control-btn {
+  float: left;
+  margin-left: -0.8em;
+}
+
+.delete {
+  border: 0;
+}

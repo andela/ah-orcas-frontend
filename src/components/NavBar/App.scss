@@ -21,7 +21,7 @@ $nav-color: #b2dfdb;
   max-height: 50px;
   overflow: hidden;
   padding: 20px 30px;
-  position: fixed;
+  position: relative;
   text-align: center;
   width: 100%;
 }
@@ -74,7 +74,7 @@ body {
   box-shadow: 0 2px 18px $color-box-shadow-nav-bar;
   color: $color-hover;
   font-family: Poppins;
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 0;
   width: 100%;

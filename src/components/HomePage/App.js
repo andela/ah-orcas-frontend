@@ -24,7 +24,7 @@ const App = function displayArticle(props) {
     />
   ));
   return (
-    <div className="card-columns article-container">
+    <div className="card-columns">
       {newArticles}
     </div>
   );

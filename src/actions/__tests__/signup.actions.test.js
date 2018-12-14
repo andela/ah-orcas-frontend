@@ -1,4 +1,4 @@
-import { signUpError, signUpSuccess } from '../signup.actions';
+import { signUpError, signUpSuccess, signUpRequest } from '../signup.actions';
 import userConstants from '../../constants/signup.constants';
 
 
@@ -27,4 +27,12 @@ it('should create register failure action', () => {
     type: userConstants.REGISTER_FAILURE,
   };
   expect(signUpError(user)).toEqual(expectedActionFailure);
+});
+
+describe('should dispatch signup action', () => {
+  it('should expect an object with a response', () => {
+    signUpRequest({})().then((res) => {
+      expect(res).toEqual({});
+    });
+  });
 });

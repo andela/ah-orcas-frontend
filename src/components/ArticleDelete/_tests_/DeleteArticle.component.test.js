@@ -1,6 +1,6 @@
 import React from 'react'; import { shallow } from 'enzyme';
 import DeleteArticle from '../DeleteArticle';
-import { store } from '../../../store/index';
+import store from '../../../store/index';
 
 function setup() {
   const props = {

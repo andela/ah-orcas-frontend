@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import BodyInput from '../InputComponents';
-import { store } from '../../../store';
+import store from '../../../store';
 
 function setup() {
   const props = {

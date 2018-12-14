@@ -6,6 +6,7 @@ import { articles, viewarticle, deleteArticle, updateArticle } from './articlesR
 import loginReducer from './loginReducer';
 import profileReducer from './profile.reducer';
 import userArticlesReducer from './userArticles.reducer';
+import ratingReducer from './ratingReducer';
 
 /*
  * We combine all reducers into a single object before updated data is dispatched (sent) to store
@@ -22,6 +23,7 @@ const allReducers = combineReducers({
   profileArticles: userArticlesReducer,
   deleteReducer: deleteArticle,
   updateArticle,
+  rating: ratingReducer,
 });
 
 export default allReducers;

@@ -9,16 +9,16 @@ export const Article = (props) => {
   const { title, description, body, slug } = props;
   return (
     <div className="container-fluid">
-      <h2>{title}</h2>
+      <h2 className="title">{title}</h2>
       <div className="">
-        <p>{description}</p>
+        <p className="description">{description}</p>
       </div>
       <div className="article-body">
         <div className="row">
           <div className="col-11">
             <p>{body}</p>
           </div>
-          <div className="col-1">
+          <div className="col-1, socialshare">
             <SocialShare title={title} slug={slug} />
           </div>
         </div>
