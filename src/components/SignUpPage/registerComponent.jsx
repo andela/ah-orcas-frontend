@@ -171,12 +171,11 @@ Errors.defaultProps = {
 };
 
 RegisterPage.propTypes = {
-  signUp: propTypes.string,
+  signUp: propTypes.func.isRequired,
   visible: propTypes.bool,
 };
 
 RegisterPage.defaultProps = {
-  signUp: '',
   visible: '',
 };
 const mapStateToProps = state => ({
