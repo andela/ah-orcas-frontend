@@ -1,17 +1,13 @@
-import { GET_ARTICLES, ADD_TAGS, VIEW_ARTICLE, DELETE_ARTICLE, DELETE_ARTICLE_REQUEST, DELETE_ARTICLE_SUCCESS } from '../constants/articles';
+import { GET_ARTICLES, VIEW_ARTICLE, DELETE_ARTICLE, DELETE_ARTICLE_REQUEST, DELETE_ARTICLE_SUCCESS, DELETE_ARTICLE_FAILURE, UPDATE_ARTICLE } from '../constants/articles';
 
 const initialState = [];
 const articleState = {};
-const intialDeleteState = {
-  isDeleting: false,
-  deleted: false,
-};
 
 const initialDeleteState = {
   isDeleting: false,
   deleted: false,
+  error: '',
 };
-
 
 export const articles = (state = initialState, action) => {
   switch (action.type) {
@@ -35,78 +31,40 @@ export const deleteArticle = (state = initialDeleteState, action) => {
   switch (action.type) {
     case DELETE_ARTICLE_REQUEST:
       return {
-        ...initialState,
-        isDeleting: false,
-        deleted: false,
-      };
-    default:
-      return state;
-  }
-};
-export const articleDeleting = (state = initialDeleteState, action) => {
-  switch (action.type) {
-    case DELETE_ARTICLE:
-      return {
-        ...initialState,
-        isDeleting: true,
-        deleted: false,
-      };
-    default:
-      return state;
-  }
-};
-
-
-
-export const deleteArticle = (state = intialDeleteState, action) => {
-  switch (action.type) {
-    case DELETE_ARTICLE_REQUEST:
-      return {
-        ...initialState,
+        ...state,
         isDeleting: false,
         deleted: false,
       };
     case DELETE_ARTICLE:
       return {
-        ...initialState,
+        ...state,
         isDeleting: true,
         deleted: false,
       };
-
-export const articleDeleted = (state = initialDeleteState, action) => {
-  switch (action.type) {
     case DELETE_ARTICLE_SUCCESS:
       return {
-        ...initialState,
+        ...state,
         isDeleting: false,
         deleted: true,
       };
+    case DELETE_ARTICLE_FAILURE:
+      return {
+        ...state,
+        isDeleting: false,
+        deleted: false,
+        error: action.error,
+      };
+
     default:
       return state;
   }
 };
-// export const articleDeleting = (state = initialState, action) => {
-//   switch (action.type) {
-//     case DELETE_ARTICLE:
-//       return {
-//         ...initialState,
-//         isDeleting: true,
-//         deleted: false,
-//       };
-//     default:
-//       return state;
-//   }
-// };
 
-// export const articleDeleted = (state = initialState, action) => {
-//   switch (action.type) {
-//     case DELETE_ARTICLE_SUCCESS:
-//       return {
-//         ...initialState,
-//         isDeleting: false,
-//         deleted: true,
-//       };
-//     default:
-//       return state;
-//   }
-// };
+export const updateArticle = (state = articleState, action) => {
+  switch (action.type) {
+    case UPDATE_ARTICLE:
+      return action.type;
+    default:
+      return state;
+  }
+};

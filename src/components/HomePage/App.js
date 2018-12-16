@@ -3,17 +3,20 @@ import './App.scss';
 import './Animation.scss';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import propTypes from 'prop-types';
 import { getAllArticles } from '../../actions/articles.action';
 import ArticleCard from './containers';
 import { USER_IMAGE } from '../../constants/articles';
 
 const App = function displayArticle(props) {
-  props.getAllArticles();
-  const newArticles = props.articles.map(article => (
+  const { fetchAllArticles, articles } = props;
+  fetchAllArticles();
+  const newArticles = articles.map(article => (
     <ArticleCard
       key={article.id}
       slug={article.slug}
       title={article.title}
+      article={article}
       username={article.author.username}
       timecreated={article.timecreated}
       description={article.description}
@@ -27,6 +30,15 @@ const App = function displayArticle(props) {
   );
 };
 
+App.propTypes = {
+  fetchAllArticles: propTypes.func,
+  articles: propTypes.func,
+};
+
+App.defaultProps = {
+  fetchAllArticles: propTypes.func,
+  articles: propTypes.func,
+};
 
 function mapStateToProps(state) {
   return {
@@ -37,7 +49,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getAllArticles: bindActionCreators(getAllArticles, dispatch),
+    fetchAllArticles: bindActionCreators(getAllArticles, dispatch),
   };
 }
 

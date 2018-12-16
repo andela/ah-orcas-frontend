@@ -1,47 +1,59 @@
-import React from 'react';
+import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import './App.scss';
 import { viewSingleArticle } from '../../actions/articles.action';
-import { Title, Description, Body } from './ArticleViewComponents';
+import Body from './ArticleViewComponents';
+import DeleteArticle from '../ArticleDelete/DeleteArticle';
 
-const App = (props) => {
-  const slug = localStorage.getItem('slug');
-  const { singleArticle, article } = props;
-  singleArticle('this-is-an-awesome-title');
+class App extends Component {
+  componentDidMount() {
+    const slug = localStorage.getItem('slug');
+    const { singleArticle } = this.props;
+    singleArticle(slug);
+  }
 
-  return (
-    <div>
-      <Title title={article.title} />
-      <br />
-      <Description description={article.description} />
-      <br />
-      <Body body={article.body} />
-    </div>
-  );
-};
+  render() {
+    const { results } = this.props;
+    return (
+      <div
+        className="container article-container"
+        style={{ width: '100%',
+          background: '#f5f5f5' }}
+      >
+        <DeleteArticle data={results} />
+        <Body
+          title={results.title}
+          description={results.description}
+          body={results.body}
+        />
+      </div>
+    );
+  }
+}
 
 App.propTypes = {
+  results: propTypes.object,
   singleArticle: propTypes.func,
-  article: propTypes.object,
 };
 
 App.defaultProps = {
+  results: {},
   singleArticle: propTypes.func,
-  article: propTypes.object,
 };
+
 
 function mapStateToProps(state) {
   return {
-    article: state.article,
+    results: state.viewarticle,
   };
 }
 
 
 function mapDispatchToProps(dispatch) {
   return {
-    viewSingleArticle: bindActionCreators(viewSingleArticle, dispatch),
+    singleArticle: bindActionCreators(viewSingleArticle, dispatch),
   };
 }
 

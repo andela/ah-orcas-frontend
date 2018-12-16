@@ -1,4 +1,3 @@
-
 //color variables
 $border-color: #e9eaea;
 $btn-color: #3b5998;
@@ -8,15 +7,13 @@ $primary-color: #f5f5f5;
 $solid-primary: #000;
 $webkit: #3e3e40;
 
-$lightprimarycolor: #FFFFFF;
+$lightprimarycolor: #fff;
 $darkcolor: #888;
-$primarycolor: #FFFFFF;
-$color-primary-dark: #FFFFFF;
-$color-accent: #FFFFFF;
-$color-white: snow;
-$black: black;
-$background-image: "images/intro.jpg";
-$navBar-height: 100%;
+$primarycolor: #fff;
+$color-primary-dark: #fff;
+$color-accent: #fff;
+$black: #000;
+$navbar-height: 100%;
 
 .myform {
   border-radius: 2em;
@@ -71,13 +68,12 @@ $navBar-height: 100%;
   width: 100%;
 }
 
-.input:focus {
-  border: 2px solid focus-color;
-}
 
-span a {
-  color: solid-primary;
-  text-decoration: none;
+span {
+  a {
+    color: solid-primary;
+    text-decoration: none;
+}
 }
 
 .mybtn {
@@ -101,53 +97,51 @@ span a {
 }
 
 .articlecard {
-  margin-top: 2rem;
-  margin-right: 1rem;
-  margin-left: 1rem;
   font-family: 'Bitter', serif;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
 }
 
 .intro-text {
-  font-size: 5em;
   color: $black;
+  font-size: 5em;
   opacity: 1;
-
-  padding-top: 5%;
   padding-left: 10%;
+  padding-top: 5%;
 }
-
 
 .title {
-  text-align: center;
   color: $black;
+  text-align: center;
 }
 
-.card:hover  {
+.card:hover {
   box-shadow: 3px 3px 3px;
   z-index: 1;
 }
 
-.description  {
+.description {
   font-family: 'Times New Roman';
   overflow: auto;
 }
 
 .top {
-  margin: 0;
-  background-image: url($background-image);
-  position: relative;
-  width: 100%;
+  border-radius: 10px;
   box-shadow: 5px 5px 5px $darkcolor;
   height: 200px;
+  margin: 0;
   margin-bottom: 2%;
-  border-radius: 10px;
-  z-index: 9;
   opacity: 0.8;
+  position: relative;
+  width: 100%;
+  z-index: 9;
 }
 
 .btn:hover {
   box-shadow: 1px 1px 1px $darkcolor;
 }
+
 .card {
   border-radius: 10px;
 }
@@ -160,10 +154,11 @@ span a {
 }
 
 .article-container {
-  padding-bottom: 5%;
   background-color: $primarycolor;
+  padding-bottom: 5%;
   padding-top: 5%;
 }
+
 .container-text {
   background-color: $lightprimarycolor;
   border-radius: 10px;
@@ -190,7 +185,6 @@ span a {
   float: left;
   margin-left: 1%;
 }
-
 
 .userimage {
   float: left;

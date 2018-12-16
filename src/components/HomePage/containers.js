@@ -5,26 +5,21 @@ import 'bootstrap';
 import propTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Title, Description, Userimage, TimeCreated, Image, Username } from './ArticleComponents';
+import Card from './ArticleComponents';
 
 const ArticleCard = (props) => {
   const { userimage, slug, timecreated, username, description, title, image } = props;
   return (
-    <div className="card slide" style={{ background: '#FFFFFF' }}>
-      <div className="card-text">
-        <Userimage userimage={userimage} />
-        <div className="text">
-          <Username username={username} />
-          <TimeCreated time={timecreated} />
-        </div>
-        <div className="clear" />
-      </div>
-      <div className="article-content">
-        <Image className="image" src={image} />
-        <Title className="title" title={title} />
-        <Description slug={slug} description={description} />
-      </div>
-    </div>
+    <Card
+      userimage={userimage}
+      slug={slug}
+      time={timecreated}
+      username={username}
+      description={description}
+      title={title}
+      image={image}
+
+    />
   );
 };
 
@@ -35,6 +30,7 @@ ArticleCard.propTypes = {
   username: propTypes.string,
   title: propTypes.string,
   image: propTypes.string,
+  slug: propTypes.string,
 };
 
 ArticleCard.defaultProps = {
@@ -44,6 +40,7 @@ ArticleCard.defaultProps = {
   username: '',
   title: '',
   image: '',
+  slug: '',
 };
 
 

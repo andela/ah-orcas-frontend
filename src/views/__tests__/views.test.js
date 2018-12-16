@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { HomePage, LoginPage, Register } from '../HomePage';
+import { HomePageView, LoginPage, Register } from '../HomePage';
 
 it('renders HomePage component without crashing', () => {
-  shallow(<HomePage />);
+  shallow(<HomePageView />);
 });
 
 it('renders LoginPage component without crashing', () => {

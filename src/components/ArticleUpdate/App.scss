@@ -2,6 +2,7 @@
   margin-left: 0.8%;
   margin-right: 2%;
   margin-top: 7%;
+
 }
 
 .form-input {
@@ -22,13 +23,14 @@
   input {
     border: 0;
     margin: 1%;
-  }
+}
 }
 
 .body-input {
   textarea {
+    border: 0;
     font-size: 2rem;
     height: 400px;
     margin-right: 2%;
-  }
+}
 }

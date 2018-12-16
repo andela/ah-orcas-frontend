@@ -4,21 +4,17 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { postArticle } from '../../actions/articles.action';
-import { TitleInputComponent, DescriptionInputComponent, BodyinputComponent, TagList } from './InputComponents';
-import Tagbtn from './Tags';
-
+import BodyinputComponent from './InputComponents';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tag: '',
       title: '',
       description: '',
       body: '',
     };
     this.handlechange = this.handlechange.bind(this);
-    this.clearTag = this.clearTag.bind(this);
     this.cleardata = this.cleardata.bind(this);
   }
 
@@ -30,33 +26,26 @@ class App extends React.Component {
 
   cleardata() {
     this.setState({
-      tags: '',
       title: '',
       description: '',
       body: '',
     });
   }
 
-  clearTag() {
-    this.setState({
-      tag: '',
-    });
-  }
 
   render() {
-    const { tags, postArticle } = this.props;
-    const { title, description, tag, body } = this.state;
+    const { postarticle } = this.props;
+    const { title, description, body } = this.state;
     return (
       <div className="form-input">
-        <TitleInputComponent handlechange={this.handlechange} title={title} />
-        <DescriptionInputComponent handlechange={this.handlechange} description={description} />
         <BodyinputComponent
           cleardata={this.cleardata}
-          postArticle={postArticle}
-          tags={tags}
+          postArticle={postarticle}
           data={this.state}
           body={body}
           handlechange={this.handlechange}
+          title={title}
+          description={description}
         />
       </div>
     );
@@ -64,11 +53,11 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  tags: propTypes.array,
+  postarticle: propTypes.func,
 };
 
 App.defaultProps = {
-  tags: [],
+  postarticle: propTypes.func,
 };
 
 function mapStateToProps(state) {
@@ -80,7 +69,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    postArticle: bindActionCreators(postArticle, dispatch),
+    postarticle: bindActionCreators(postArticle, dispatch),
   };
 }
 

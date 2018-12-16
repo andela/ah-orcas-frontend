@@ -1,20 +1,21 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { store } from '../../../store';
-import HomePage from '../App';
+import Buttons from '../containers';
 
 function setup() {
   const props = {
     login: jest.fn(),
+    resolved: false,
+    social: {},
   };
-  const enzymeWrapper = shallow(<HomePage {...props} store={store} />);
+  const enzymeWrapper = shallow(<Buttons {...props} />);
   return {
     props,
     enzymeWrapper,
   };
 }
 
-describe('login components', () => {
+describe('social login components', () => {
   describe('login', () => {
     it('should render self and subcomponents', () => {
       const { enzymeWrapper } = setup();

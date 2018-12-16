@@ -1,19 +1,19 @@
-
 import axios from 'axios';
-import { GET_ARTICLES, ADD_ARTICLE, ADD_TAGS, VIEW_ARTICLE, DELETE_ARTICLE, DELETE_ARTICLE_FAILURE, DELETE_ARTICLE_SUCCESS } from '../constants/articles';
+import { GET_ARTICLES, ADD_ARTICLE, VIEW_ARTICLE, DELETE_ARTICLE, DELETE_ARTICLE_FAILURE, DELETE_ARTICLE_SUCCESS, UPDATE_ARTICLE } from '../constants/articles';
 import baseUrl from '../constants/url';
 
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDUyMDk5MTAsImlhdCI6MTU0NDYwNTExMCwiaWQiOjkxfQ.5CmLxpWm3to8JVHa_iRUjdsh4vhrs24AVUK8ED9ZTUo';
+const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDUzMTQ4MTMsImlhdCI6MTU0NDcxMDAxMywiaWQiOjUxfQ.qB3oqQNnoeoYnaTRIp9h4TXAmARQLfUjVVZzUpjAfCw';
 axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 
 export const getAllArticles = () => (dispatch) => {
   axios.get(`${baseUrl}/article/`)
     .then((articles) => {
       articles.data.results.map((article) => {
-        if (!article.image) {
-          article.image = 'https://picsum.photos/50/100/?random';
+        const newArticle = article;
+        if (!newArticle.image) {
+          newArticle.image = 'https://picsum.photos/50/100/?random';
         }
-        return article;
+        return newArticle;
       });
       dispatch({
         type: GET_ARTICLES,
@@ -47,9 +47,48 @@ export const viewSingleArticle = slug => (dispatch) => {
   });
 };
 
-// const ID = 0;
-// export const addTags = tag => ({
-//   type: ADD_TAGS,
-//   id: ID + 1,
-//   tag,
-// });
+export const deleteArticle = () => (
+  {
+    type: DELETE_ARTICLE,
+  }
+);
+
+export const deleteArticleFailure = response => (
+  {
+    type: DELETE_ARTICLE_FAILURE,
+    payload: response,
+  }
+);
+
+export const deleteArticleSuccess = response => (
+  {
+    type: DELETE_ARTICLE_SUCCESS,
+    payload: response,
+  }
+);
+
+export const deleteArticleApi = (slug) => {
+  const url = `${baseUrl}/article/delete/${slug}/`;
+  return (dispatch) => {
+    dispatch(deleteArticle());
+    return axios.delete(url).then(
+      (response) => {
+        dispatch(deleteArticleSuccess(response));
+      },
+      (err) => {
+        dispatch(deleteArticleFailure(err.response));
+      },
+    );
+  };
+};
+
+export const updateArticle = (data, slug) => (dispatch) => {
+  const url = `${baseUrl}/article/update/${slug}/`;
+  axios.put(url, data).then((article) => {
+    dispatch({
+      type: UPDATE_ARTICLE,
+      payload: article.data,
+    });
+  }).catch(() => {
+  });
+};
