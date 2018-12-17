@@ -7,6 +7,14 @@ $primary-color: #f5f5f5;
 $solid-primary: #000;
 $webkit: #3e3e40;
 
+$lightprimarycolor: #fff;
+$darkcolor: #888;
+$primarycolor: #fff;
+$color-primary-dark: #fff;
+$color-accent: #fff;
+$black: #000;
+$navbar-height: 100%;
+
 .myform {
   border-radius: 2em;
   border-style: solid;
@@ -29,10 +37,6 @@ $webkit: #3e3e40;
   user-select: none;
 }
 
-.container {
-  margin: 30px auto;
-  width: 450px;
-}
 
 .signup {
   cursor: pointer;
@@ -60,13 +64,12 @@ $webkit: #3e3e40;
   width: 100%;
 }
 
-.input:focus {
-  border: 2px solid focus-color;
-}
 
-span a {
-  color: solid-primary;
-  text-decoration: none;
+span {
+  a {
+    color: solid-primary;
+    text-decoration: none;
+}
 }
 
 .mybtn {
@@ -87,4 +90,99 @@ span a {
   margin-bottom: 1rem;
   padding: 0.75rem 1.25rem;
   position: relative;
+}
+
+.articlecard {
+  font-family: 'Bitter', serif;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+}
+
+.intro-text {
+  color: $black;
+  font-size: 5em;
+  opacity: 1;
+  padding-left: 10%;
+  padding-top: 5%;
+}
+
+.title {
+  color: $black;
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: 3px 3px 3px;
+  z-index: 1;
+}
+
+.description {
+  font-size: 60rem;
+}
+
+.top {
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px $darkcolor;
+  height: 200px;
+  margin: 0;
+  margin-bottom: 2%;
+  opacity: 0.8;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.btn:hover {
+  box-shadow: 1px 1px 1px $darkcolor;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.article-content {
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px $darkcolor;
+  margin-bottom: -1%;
+  padding: 1%;
+}
+
+.article-container {
+  background-color: $primarycolor;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
+.container-text {
+  background-color: $lightprimarycolor;
+  border-radius: 10px;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  padding: 1%;
+  text-align: left;
+}
+
+.text {
+  margin-left: 1%;
+}
+
+.time {
+  float: right;
+  margin-left: 1%;
+}
+
+.clear {
+  clear: both;
+}
+
+.username {
+  float: left;
+  margin-left: 1%;
+}
+
+.userimage {
+  float: left;
+  margin: 1%;
+  width: 5%;
 }

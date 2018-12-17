@@ -9,10 +9,12 @@ export const NavBarComponent = () => (
       <div className="horz-center nav-container">
         <div className="floated logo">Authors Haven</div>
         <ul className="floated right nav-div nav-link">
-          <li className="rela-inline">Home</li>
-          <li className="rela-inline">Search</li>
-          <li className="rela-inline">About</li>
-          <li className="rela-inline">Contact Us</li>
+          <a href="/create" className="rela-inline btn-link">
+            New Article
+          </a>
+          <a href="/" className="rela-inline">Home</a>
+          <a href="/login" className="rela-inline">Signin</a>
+          <a href="/register" className="rela-inline">Signup</a>
         </ul>
       </div>
     </div>
