@@ -31,9 +31,9 @@ const loginUser = (loginData, props) => {
       (err) => {
         dispatch(loginFailed(err.response));
         props.history.push('/login');
-        setTimeout(function(){
+        setTimeout(() => {
           window.location.reload(1);
-       }, 5000);
+        }, 5000);
       },
     );
   };

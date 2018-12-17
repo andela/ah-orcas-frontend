@@ -9,6 +9,7 @@ env:
     CC_TEST_REPORTER_ID=$report_id # get the test reporter id from the environment variable 'report_id' from code climate
 
 before_install:
+  - npm install --save-dev babel-preset-react
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter # make the test reporter file executable
   - ./cc-test-reporter before-build # run the test reporter before build

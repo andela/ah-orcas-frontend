@@ -1,20 +1,24 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { mount } from 'enzyme';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { shallow } from 'enzyme';
 import { store } from '../../../store';
-import App from '../App';
+import HomePage from '../App';
 
-it('renders register component without crashing', () => {
-  const wrapper = mount(
-    <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
-    </Provider>,
-  );
-  wrapper.find('#signup-form').simulate(
-    'submit',
-    { preventDefault() {} },
-  );
+function setup() {
+  const props = {
+    login: jest.fn(),
+  };
+  const enzymeWrapper = shallow(<HomePage {...props} store={store} />);
+  return {
+    props,
+    enzymeWrapper,
+  };
+}
+
+describe('login components', () => {
+  describe('login', () => {
+    it('shou ld render self and subcomponents', () => {
+      const { enzymeWrapper } = setup();
+      expect(enzymeWrapper.find('div').length).toBe(0);
+    });
+  });
 });

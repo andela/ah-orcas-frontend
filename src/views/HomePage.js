@@ -1,16 +1,17 @@
 import React from 'react';
-import Home from '../components/HomePage/App';
-import { NavBarComponent, FooterComponent } from '../components/NavBar/App';
-// importing the connected app with Authlogin as name
 import AuthLogin from '../components/LoginPage/App';
+import ResetPasswordComp from '../components/ResetPassword/ResetPassword';
 import RegisterPage from '../components/SignUpPage/registerComponent';
-// eslint-disable-next-line import/no-named-as-default
-import ResetPasswordComponent from '../components/ResetPassword/ResetPassword';
 import Profile from '../components/ProfilePage/Profile';
+import HomePage from '../components/HomePage/App';
+import ArticleInput from '../components/ArticleCreate/App';
+import Article from '../components/ArticleView/App';
+import Update from '../components/ArticleUpdate/App';
+import { NavBarComponent, FooterComponent } from '../components/NavBar/App';
 
 
-export const HomePage = () => (
-  <Home />
+export const HomePageView = () => (
+  <HomePage className="grid" />
 );
 
 export const LoginPage = ({ ...props }) => (
@@ -24,12 +25,25 @@ export const Header = () => (
 export const Footer = () => (
   <FooterComponent />
 );
+
 export const Register = () => (
   <RegisterPage />
 );
 
 export const ResetPassword = () => (
-  <ResetPasswordComponent />
+  <ResetPasswordComp />
+);
+
+export const ArticleInputComponents = () => (
+  <ArticleInput />
+);
+
+export const ArticleComponent = () => (
+  <Article />
+);
+
+export const updateArticleComponent = () => (
+  <Update />
 );
 
 export const ProfilePage = ({ ...props }) => (
