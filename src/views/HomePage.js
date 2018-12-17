@@ -13,8 +13,8 @@ export const HomePage = () => (
   <Home />
 );
 
-export const LoginPage = () => (
-  <AuthLogin />
+export const LoginPage = ({ ...props }) => (
+  <AuthLogin {...props} />
 );
 
 export const Header = () => (

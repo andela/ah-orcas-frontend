@@ -1,20 +1,18 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import { UncontrolledAlert } from 'reactstrap';
 
-const Alert = ({ message, errorVisiblity }) => (
-  <div className="alert-error">
-    <span>{message}</span>
-    <button type="button" onClick={errorVisiblity}>&times;</button>
-  </div>
+const Alert = ({ message }) => (
+  <UncontrolledAlert color="warning">
+    {message}
+  </UncontrolledAlert>
 );
 
 Alert.propTypes = {
-  errorVisiblity: propTypes.func,
   message: propTypes.string,
 };
 
 Alert.defaultProps = {
-  errorVisiblity: propTypes.func,
   message: propTypes.string,
 };
 export default Alert;

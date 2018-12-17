@@ -54,7 +54,7 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="rela-block container">
+      <div className="rela-block container-profile">
         <div className="rela-block profile-card">
           <div className="profile-pic" id="profile_pic" />
           <ProfileNameCard username={this.state.profile.username} bio={this.state.profile.bio} />

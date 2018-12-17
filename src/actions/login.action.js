@@ -1,5 +1,4 @@
 import axios from 'axios';
-import baseUrl from '../constants/url';
 
 export const loginStart = () => ({
   type: 'LOGIN_START',
@@ -18,18 +17,23 @@ export const loginFailed = error => ({
 
 
 // dispatch apropriate action for login
-const loginUser = (loginData) => {
-  const url = `${baseUrl}/users/login/`;
+const loginUser = (loginData, props) => {
+  const url = `${process.env.REACT_APP_URL}users/login/`;
   return (dispatch) => {
     dispatch(loginStart());
     return axios.post(url,
       { user: { email: loginData.email, password: loginData.password } }).then(
       (response) => {
-        dispatch(loginSuccess(response));
         localStorage.setItem('user', JSON.stringify(response.data.user));
+        dispatch(loginSuccess(response));
+        props.history.push('/');
       },
       (err) => {
         dispatch(loginFailed(err.response));
+        props.history.push('/login');
+        setTimeout(function(){
+          window.location.reload(1);
+       }, 5000);
       },
     );
   };
