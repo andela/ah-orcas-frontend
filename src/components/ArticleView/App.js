@@ -27,6 +27,7 @@ class App extends Component {
           title={results.title}
           description={results.description}
           body={results.body}
+          slug={results.slug}
         />
       </div>
     );
