@@ -8,6 +8,7 @@ import ArticleInput from '../components/ArticleCreate/App';
 import Article from '../components/ArticleView/App';
 import Update from '../components/ArticleUpdate/App';
 import { NavBarComponent, FooterComponent } from '../components/NavBar/App';
+import RateArticle from '../components/RateArticle/rateArticleComponent';
 
 
 export const HomePageView = () => (
@@ -48,4 +49,8 @@ export const updateArticleComponent = () => (
 
 export const ProfilePage = ({ ...props }) => (
   <Profile {...props} />
+);
+
+export const Rate = () => (
+  <RateArticle />
 );

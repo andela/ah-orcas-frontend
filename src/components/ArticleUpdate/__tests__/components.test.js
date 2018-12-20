@@ -2,9 +2,8 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { store } from '../../../store';
 import UpdateForm, { Form } from '../UpdateForm';
-
+import store from '../../../store';
 
 function setup() {
   const props = {

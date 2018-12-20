@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { store } from '../../../store';
+import store from '../../../store';
 import HomePage from '../App';
 
 function setup() {

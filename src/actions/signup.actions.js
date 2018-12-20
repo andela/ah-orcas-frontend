@@ -16,9 +16,9 @@ export const signUpSuccess = user => ({
   user,
 });
 
-const signUpRequest = data => (dispatch) => {
+export const signUpRequest = data => (dispatch) => {
   const url = process.env.REACT_APP_URL;
-  axios.post(`${url}users/`, { user: data })
+  return axios.post(`${url}users/`, { user: data })
     .then((response) => {
       dispatch(signUpSuccess(response));
     })

@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { mount } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Register from '../registerComponent';
-import { store } from '../../../store';
+import store from '../../../store';
 
 const email = 'email@example.com';
 

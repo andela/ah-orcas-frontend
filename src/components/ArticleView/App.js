@@ -6,29 +6,36 @@ import './App.scss';
 import { viewSingleArticle } from '../../actions/articles.action';
 import Body from './ArticleViewComponents';
 import DeleteArticle from '../ArticleDelete/DeleteArticle';
+import RateArticle from '../RateArticle/rateArticleComponent';
+import AverageRate from '../RateArticle/averageRate';
+
 
 class App extends Component {
-  componentDidMount() {
+  async componentDidMount() {
     const slug = localStorage.getItem('slug');
-    const { singleArticle } = this.props;
+    const { singleArticle } = await this.props;
     singleArticle(slug);
   }
 
   render() {
-    const { results } = this.props;
+    const { results, rates } = this.props;
     return (
       <div
-        className="container article-container"
-        style={{ width: '100%',
-          background: '#f5f5f5' }}
+        className="article-container"
       >
-        <DeleteArticle data={results} />
+        <p className="average">
+Average Ratings
+          <AverageRate rates={rates} />
+        </p>
         <Body
           title={results.title}
           description={results.description}
           body={results.body}
           slug={results.slug}
         />
+        <br />
+        <RateArticle />
+        <DeleteArticle data={results} />
       </div>
     );
   }
@@ -36,18 +43,18 @@ class App extends Component {
 
 App.propTypes = {
   results: propTypes.object,
-  singleArticle: propTypes.func,
+  rates: propTypes.number.isRequired,
 };
 
 App.defaultProps = {
   results: {},
-  singleArticle: propTypes.func,
 };
 
 
 function mapStateToProps(state) {
   return {
     results: state.viewarticle,
+    rates: state.rating.average_rating,
   };
 }
 
