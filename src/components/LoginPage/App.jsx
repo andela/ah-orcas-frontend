@@ -9,6 +9,7 @@ import Alert from './alert';
 import SocialLoginConnected from './SocialLogin';
 import FormGroups from './form';
 import { SignupLoginLink } from '../SignUpPage/registerComponent';
+
 const image = require('../../assets/images/1505193005.jpg');
 
 function validateLoginInputs(email, password) {
@@ -69,12 +70,10 @@ export class Login extends React.Component {
         <section className="sign-in">
           <div className="container">
             <div className="signin-content col-md-10">
-              <SignupLoginLink imageClass="signin-image" image={image} link="/register" text="Click here to register"/>
+              <SignupLoginLink imageClass="signin-image" image={image} link="/register" text="Click here to register" />
               <div className="signin-form" />
               <div className="col-md-5">
                 <h2 className="form-title">Sign In</h2>
-                <SocialLoginUl />
-                <span className="social-label">Or</span>
                 <form method="POST" className="register-form" id="login-form">
                   {errors.map(error => (
                     <p className="errors" key={error}>{error}</p>
@@ -88,6 +87,8 @@ export class Login extends React.Component {
                   />
                   <FormGroup handleSubmit={this.handleSubmit} />
                 </form>
+                <hr className="style-eight" />
+                <SocialLoginUl />
               </div>
             </div>
           </div>
@@ -97,10 +98,8 @@ export class Login extends React.Component {
 }
 
 export const SocialLoginUl = () => (
-  <div className="social-login">
-    <ul className="socials">
+  <div className="social-login-new">
       <SocialLoginConnected />
-    </ul>
   </div>
 );
 
