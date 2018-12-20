@@ -9,7 +9,6 @@ const provideToken = () => {
 };
 
 export const getAllArticles = () => (dispatch) => {
-  provideToken();
   axios.get(`${baseUrl}article/`)
     .then((articles) => {
       articles.data.results.map((article) => {

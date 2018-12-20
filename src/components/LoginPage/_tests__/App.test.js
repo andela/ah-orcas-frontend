@@ -45,7 +45,7 @@ describe('login components', () => {
 
     it('renders social login', () => {
       const wrapper = shallow(<SocialLoginUl />);
-      expect(wrapper.find('.social-login').length).toEqual(1);
+      expect(wrapper.find('.social-login-new').length).toEqual(1);
     });
 
     it('renders form group', () => {
