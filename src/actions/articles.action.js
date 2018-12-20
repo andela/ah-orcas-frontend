@@ -2,10 +2,13 @@ import axios from 'axios';
 import { GET_ARTICLES, ADD_ARTICLE, VIEW_ARTICLE, DELETE_ARTICLE, DELETE_ARTICLE_FAILURE, DELETE_ARTICLE_SUCCESS, UPDATE_ARTICLE } from '../constants/articles';
 import baseUrl from '../constants/url';
 
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDUzMTQ4MTMsImlhdCI6MTU0NDcxMDAxMywiaWQiOjUxfQ.qB3oqQNnoeoYnaTRIp9h4TXAmARQLfUjVVZzUpjAfCw';
-axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+const provideToken = () => {
+  const { token } = JSON.parse(localStorage.getItem('user'));
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
 
 export const getAllArticles = () => (dispatch) => {
+  provideToken();
   axios.get(`${baseUrl}article/`)
     .then((articles) => {
       articles.data.results.map((article) => {
@@ -22,7 +25,8 @@ export const getAllArticles = () => (dispatch) => {
     });
 };
 
-export const postArticle = data => (dispatch) => {
+export const postArticle = (data, cleardata, handleError) => (dispatch) => {
+  provideToken();
   axios.post(`${baseUrl}article/create`, data).then((article) => {
     dispatch(
       {
@@ -30,11 +34,17 @@ export const postArticle = data => (dispatch) => {
         payload: article.data,
       },
     );
+    cleardata();
+    setTimeout(() => {
+      window.location.assign(process.env.REACT_APP_FRONTEND_URL);
+    }, 3000);
   }).catch(() => {
+    handleError();
   });
 };
 
 export const viewSingleArticle = slug => (dispatch) => {
+  provideToken();
   const url = `${baseUrl}article/detail/${slug}/`;
   axios.get(url).then((article) => {
     dispatch(
@@ -68,6 +78,7 @@ export const deleteArticleSuccess = response => (
 );
 
 export const deleteArticleApi = (slug) => {
+  provideToken();
   const url = `${baseUrl}article/delete/${slug}/`;
   return (dispatch) => {
     dispatch(deleteArticle());
@@ -82,13 +93,19 @@ export const deleteArticleApi = (slug) => {
   };
 };
 
-export const updateArticle = (data, slug) => (dispatch) => {
+export const updateArticle = (data, slug, handleError, handleSuccess) => (dispatch) => {
+  provideToken();
   const url = `${baseUrl}article/update/${slug}/`;
   axios.put(url, data).then((article) => {
     dispatch({
       type: UPDATE_ARTICLE,
       payload: article.data,
     });
+    handleSuccess();
+    setTimeout(() => {
+      window.location.assign(process.env.REACT_APP_FRONTEND_URL);
+    }, 3000);
   }).catch(() => {
+    handleError();
   });
 };

@@ -1,7 +1,15 @@
 .title-input {
-  margin-left: 0.8%;
   margin-right: 2%;
-  margin-top: 7%;
+  margin-top: 2%;
+  padding-left: 4px;
+
+}
+
+.description-input {
+  margin-right: 3%;
+  margin-top: 2px;
+  padding-left: 3px;
+
 }
 
 .form-input {
@@ -12,21 +20,38 @@
 }
 
 .publish-btn {
-  float: right;
+  border-radius: 17px;
   font-size: 2rem;
   margin-top: 1%;
   width: 20%;
+  margin-right: 26px;
 }
 
 .body-input {
+  padding-left: 16px;
   textarea {
     font-size: 2rem;
     height: 400px;
-    margin-right: 2%;
+    width: 97.6%;
+    border-radius: 5px;
+    padding-left: 16px;
   }
 }
+.form-control {
+  border: 1px solid;
+}
 
-// .description:hover {
-//   box-shadow: 3px 3px 3px;
-//   z-index: 1;
-// }
+.Alert {
+  background-color: #2ebaae;
+  margin-bottom: 4px;
+  margin-top: 6%;
+  width: 99%;
+}
+
+.article-create-page {
+  margin: auto;
+  padding-top: 3%;
+  width: 75%;
+
+}
+

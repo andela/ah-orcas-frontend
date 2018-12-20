@@ -80,7 +80,7 @@ export class Login extends React.Component {
                     <p className="errors" key={error}>{error}</p>
                   ))}
                   {userData.errors
-                    ? <Alert message={userData.responseData.data.errors.error[0]} /> : ''}
+                    ? <Alert message={userData.responseData.data.errors.error[0]} color="warning" /> : ''}
                   <FormGroups
                     email={email}
                     password={password}
