@@ -9,6 +9,7 @@ import DeleteArticle from '../ArticleDelete/DeleteArticle';
 import RateArticle from '../RateArticle/rateArticleComponent';
 import AverageRate from '../RateArticle/averageRate';
 
+import LikesDislikes from '../LikeDislike/likedislike';
 
 class App extends Component {
   async componentDidMount() {
@@ -34,6 +35,7 @@ Average Ratings
           slug={results.slug}
         />
         <br />
+        <LikesDislikes />
         <RateArticle />
         <DeleteArticle data={results} />
       </div>
