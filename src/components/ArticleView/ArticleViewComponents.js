@@ -3,10 +3,11 @@ import 'bootstrap';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import propTypes from 'prop-types';
+import TagList from './tagComponent';
 import SocialShare from '../SocialShare/ShareComponent';
 
 export const Article = (props) => {
-  const { title, description, body, slug } = props;
+  const { title, description, body, tags, slug } = props;
   return (
     <div className="container-fluid">
       <h2 className="title">{title}</h2>
@@ -21,6 +22,8 @@ export const Article = (props) => {
           <div className="col-1, socialshare">
             <SocialShare title={title} slug={slug} />
           </div>
+          <TagList tags={tags} />
+          <div />
         </div>
       </div>
     </div>
@@ -31,6 +34,7 @@ Article.propTypes = {
   title: propTypes.string,
   description: propTypes.string,
   body: propTypes.string,
+  tags: propTypes.array,
   slug: propTypes.string,
 };
 
@@ -38,6 +42,7 @@ Article.defaultProps = {
   title: '',
   description: '',
   body: '',
+  tags: [],
   slug: '',
 };
 

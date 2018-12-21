@@ -29,8 +29,10 @@ Average Ratings
           <AverageRate rates={rates} />
         </p>
         <Body
+          tags={results.tags}
+          username={results.title}
           title={results.title}
-          description={results.description}
+          descion={results.description}
           body={results.body}
           slug={results.slug}
         />

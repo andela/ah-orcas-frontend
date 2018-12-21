@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Article from '../ArticleViewComponents';
+import ArticleComponent from '../ArticleViewComponents';
 
 function setup() {
   const props = {
@@ -8,7 +8,7 @@ function setup() {
     resolved: false,
     social: {},
   };
-  const enzymeWrapper = shallow(<Article {...props} />);
+  const enzymeWrapper = shallow(<ArticleComponent {...props} />);
   return {
     props,
     enzymeWrapper,
@@ -19,8 +19,9 @@ describe('Article View Components', () => {
   describe('Article', () => {
     it('should render self and subcomponents', () => {
       const { enzymeWrapper } = setup();
-      expect(enzymeWrapper.find('.container').length).toBe(0);
-      expect(enzymeWrapper).toMatchSnapshot();
+      expect(enzymeWrapper.find('.container-fluid').length).toBe(1);
+      expect(enzymeWrapper.find('.article-body').length).toBe(1);
+      expect(enzymeWrapper.find('.row').length).toBe(1);
     });
   });
 });

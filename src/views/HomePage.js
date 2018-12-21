@@ -43,7 +43,7 @@ export const ArticleComponent = () => (
   <Article />
 );
 
-export const updateArticleComponent = () => (
+export const UpdateArticleComponent = () => (
   <Update />
 );
 

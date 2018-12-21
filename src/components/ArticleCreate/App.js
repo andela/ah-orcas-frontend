@@ -4,6 +4,7 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { postArticle } from '../../actions/articles.action';
+import { clearTags } from '../../actions/tags.action';
 import BodyinputComponent from './InputComponents';
 
 class App extends React.Component {
@@ -15,8 +16,9 @@ class App extends React.Component {
       body: '',
       loading: false,
       success: false,
-      buttonDisabled: true,
+      buttonDisabled: false,
       error: false,
+      tags: null,
 
     };
     this.handlechange = this.handlechange.bind(this);
@@ -26,12 +28,20 @@ class App extends React.Component {
     this.handleError = this.handleError.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { tags } = nextProps;
+    this.setState({
+      tags,
+    });
+  }
+
   handlechange(event) {
     this.setState({
       [event.target.name]: event.target.value,
     });
     this.enablePublishButton();
   }
+
 
   cleardata() {
     this.setState({
@@ -40,14 +50,17 @@ class App extends React.Component {
       body: '',
       loading: false,
       success: true,
+      tags: [],
     });
   }
+
 
   submitArticle() {
     const { postarticle } = this.props;
     postarticle(this.state, this.cleardata, this.handleError, this.props);
     this.setState(
       {
+        tags: [],
         loading: true,
       },
     );
@@ -73,7 +86,7 @@ class App extends React.Component {
 
   render() {
     const { postarticle } = this.props;
-    const { title, description, body, buttonDisabled, loading, success, error } = this.state;
+    const { title, description, body, buttonDisabled, loading, tags, success, error } = this.state;
     return (
       <div className="form-input">
         <BodyinputComponent
@@ -81,6 +94,7 @@ class App extends React.Component {
           buttonDisabled={buttonDisabled}
           postArticle={postarticle}
           body={body}
+          tags={tags}
           handlechange={this.handlechange}
           title={title}
           description={description}
@@ -95,10 +109,12 @@ class App extends React.Component {
 
 App.propTypes = {
   postarticle: propTypes.func,
+  tags: propTypes.array,
 };
 
 App.defaultProps = {
   postarticle: propTypes.func,
+  tags: [],
 };
 
 function mapStateToProps(state) {
@@ -111,6 +127,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     postarticle: bindActionCreators(postArticle, dispatch),
+    cleartags: bindActionCreators(clearTags, dispatch),
   };
 }
 

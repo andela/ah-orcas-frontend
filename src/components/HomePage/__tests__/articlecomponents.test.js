@@ -25,8 +25,7 @@ describe('login', () => {
     const { Wrapper } = setup();
     expect(Wrapper.find('button').length).toBe(1);
     expect(Wrapper.find('div').length).toBe(6);
-    expect(Wrapper.find('a').length).toBe(2);
+    expect(Wrapper.find('a').length).toBe(3);
     expect(Wrapper.find('p').length).toBe(1);
-    expect(Wrapper).toMatchSnapshot();
   });
 });
