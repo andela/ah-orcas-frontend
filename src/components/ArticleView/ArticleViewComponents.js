@@ -22,9 +22,9 @@ export const Article = (props) => {
           <div className="col-1, socialshare">
             <SocialShare title={title} slug={slug} />
           </div>
-          <TagList tags={tags} />
           <div />
         </div>
+        <TagList tags={tags} />
       </div>
     </div>
   );

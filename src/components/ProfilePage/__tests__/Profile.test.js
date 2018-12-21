@@ -6,6 +6,7 @@ function setup() {
   const props = {
     resetPass: jest.fn(),
     match: { params: { username: 'john' } },
+    articles: [],
   };
 
   localStorage.setItem('user', '{"email": "john@jake.jake", "username": "john", "token": "token"}');

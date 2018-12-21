@@ -13,9 +13,8 @@ import LikesDislikes from '../LikeDislike/likedislike';
 
 class App extends Component {
   async componentDidMount() {
-    const slug = localStorage.getItem('slug');
     const { singleArticle } = await this.props;
-    singleArticle(slug);
+    singleArticle(window.location.href.substr(window.location.href.lastIndexOf('/') + 1));
   }
 
   render() {
