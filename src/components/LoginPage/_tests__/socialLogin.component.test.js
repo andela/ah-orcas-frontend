@@ -21,6 +21,7 @@ describe('social login components', () => {
       const { enzymeWrapper } = setup();
       expect(enzymeWrapper.find('.social-button-bt').length).toBe(1);
       expect(enzymeWrapper.find('.btn-facebook').length).toBe(1);
+      expect(enzymeWrapper).toMatchSnapshot();
     });
   });
 });

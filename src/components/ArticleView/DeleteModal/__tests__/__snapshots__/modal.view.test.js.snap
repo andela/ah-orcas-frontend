@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  aria-hidden="true"
+  aria-labelledby="exampleModalLabel"
+  className="modal fade"
+  id="exampleModal"
+  role="dialog"
+  tabIndex={-1}
+>
+  <div
+    className="modal-dialog"
+    role="document"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h5
+          className="modal-title"
+          id="exampleModalLabel"
+          style={
+            Object {
+              "color": "red",
+            }
+          }
+        >
+          Delete
+           
+        </h5>
+        <button
+          aria-label="Close"
+          className="close"
+          data-dismiss="modal"
+          type="button"
+        >
+          <span
+            aria-hidden="true"
+          >
+            ×
+          </span>
+        </button>
+      </div>
+      <div
+        className="modal-body"
+      >
+        Are sure you want to delete this article??
+      </div>
+      <div
+        className="modal-footer"
+      >
+        <button
+          className="btn cancel"
+          data-dismiss="modal"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          className="btn del"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "ghostwhite",
+            }
+          }
+          type="button"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
