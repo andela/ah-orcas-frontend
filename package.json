@@ -86,7 +86,9 @@
       "!src/actions/index.js",
       "!src/index.js",
       "!src/serviceWorker.js",
-      "!src/routes/Routes.js"
+      "!src/routes/Routes.js",
+      "!src/serviceWorker.js",
+      "!src/actions/articles.action.js"
     ]
   }
 }

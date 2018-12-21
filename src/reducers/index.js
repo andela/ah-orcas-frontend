@@ -8,6 +8,7 @@ import profileReducer from './profile.reducer';
 import userArticlesReducer from './userArticles.reducer';
 import ratingReducer from './ratingReducer';
 
+import likesReducer from './likeReducer';
 /*
  * We combine all reducers into a single object before updated data is dispatched (sent) to store
  * Your entire applications state (store) is just whatever gets returned from all your reducers
@@ -24,6 +25,7 @@ const allReducers = combineReducers({
   deleteReducer: deleteArticle,
   updateArticle,
   rating: ratingReducer,
+  likesReducer,
 });
 
 export default allReducers;

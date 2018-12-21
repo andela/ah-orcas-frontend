@@ -20,6 +20,7 @@ describe('Article View Components', () => {
     it('should render self and subcomponents', () => {
       const { enzymeWrapper } = setup();
       expect(enzymeWrapper.find('.container').length).toBe(0);
+      expect(enzymeWrapper).toMatchSnapshot();
     });
   });
 });

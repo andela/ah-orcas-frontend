@@ -25,6 +25,8 @@ describe('Update form unconnected', () => {
       expect(enzymeWrapper.find('.form-group-lg').length).toBe(2);
       expect(enzymeWrapper.find('.article-create-page').length).toBe(1);
       expect(enzymeWrapper.find('.form-control-lg').length).toBe(1);
+      expect(enzymeWrapper.find('.container').length).toBe(0);
+      expect(enzymeWrapper).toMatchSnapshot();
     });
   });
 });

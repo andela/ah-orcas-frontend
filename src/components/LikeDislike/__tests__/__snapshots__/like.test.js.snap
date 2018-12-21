@@ -1,0 +1,283 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test for like disike snapshot test should create a snapshot test 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LikesDislikes
+    dispatch={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            [Function],
+          ],
+          Array [
+            [Function],
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    payload={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <button
+          className="btn btn-default btn-responsive up_button"
+          id="likebutton"
+          onClick={[Function]}
+          type="button"
+        >
+          <i
+            className="fa fa-thumbs-up fa-2x"
+            id="thumbsup"
+          />
+           
+        </button>,
+        <button
+          className="btn btn-default btn-responsive up_button"
+          id="likebutton"
+          onClick={[Function]}
+          type="button"
+        >
+          <i
+            className="fa fa-thumbs-down fa-2x"
+            id="thumbsdown"
+          />
+           
+        </button>,
+      ],
+      "className": "likecontainer",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <i
+              className="fa fa-thumbs-up fa-2x"
+              id="thumbsup"
+            />,
+            " ",
+            undefined,
+          ],
+          "className": "btn btn-default btn-responsive up_button",
+          "id": "likebutton",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "fa fa-thumbs-up fa-2x",
+              "id": "thumbsup",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          " ",
+          undefined,
+        ],
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <i
+              className="fa fa-thumbs-down fa-2x"
+              id="thumbsdown"
+            />,
+            " ",
+            undefined,
+          ],
+          "className": "btn btn-default btn-responsive up_button",
+          "id": "likebutton",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "fa fa-thumbs-down fa-2x",
+              "id": "thumbsdown",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          " ",
+          undefined,
+        ],
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <button
+            className="btn btn-default btn-responsive up_button"
+            id="likebutton"
+            onClick={[Function]}
+            type="button"
+          >
+            <i
+              className="fa fa-thumbs-up fa-2x"
+              id="thumbsup"
+            />
+             
+          </button>,
+          <button
+            className="btn btn-default btn-responsive up_button"
+            id="likebutton"
+            onClick={[Function]}
+            type="button"
+          >
+            <i
+              className="fa fa-thumbs-down fa-2x"
+              id="thumbsdown"
+            />
+             
+          </button>,
+        ],
+        "className": "likecontainer",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <i
+                className="fa fa-thumbs-up fa-2x"
+                id="thumbsup"
+              />,
+              " ",
+              undefined,
+            ],
+            "className": "btn btn-default btn-responsive up_button",
+            "id": "likebutton",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "fa fa-thumbs-up fa-2x",
+                "id": "thumbsup",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            " ",
+            undefined,
+          ],
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <i
+                className="fa fa-thumbs-down fa-2x"
+                id="thumbsdown"
+              />,
+              " ",
+              undefined,
+            ],
+            "className": "btn btn-default btn-responsive up_button",
+            "id": "likebutton",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "fa fa-thumbs-down fa-2x",
+                "id": "thumbsdown",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            " ",
+            undefined,
+          ],
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
