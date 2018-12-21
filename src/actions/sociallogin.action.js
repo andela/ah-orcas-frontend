@@ -14,7 +14,7 @@ const SocialAuthAct = socialData => (dispatch) => {
   axios.post(`${process.env.REACT_APP_URL}social_auth/`, payload)
     .then((response) => {
       dispatch(socialSuccess(response.data));
-      localStorage.setItem('user', JSON.stringify(response.data));
+      localStorage.setItem('user', JSON.stringify(response.data.user));
       window.location.assign(process.env.REACT_APP_FRONTEND_URL);
     },
     );

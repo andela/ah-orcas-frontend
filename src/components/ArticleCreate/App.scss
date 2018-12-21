@@ -22,21 +22,22 @@
 .publish-btn {
   border-radius: 17px;
   font-size: 2rem;
+  margin-right: 26px;
   margin-top: 1%;
   width: 20%;
-  margin-right: 26px;
 }
 
 .body-input {
   padding-left: 16px;
   textarea {
+    border-radius: 5px;
     font-size: 2rem;
     height: 400px;
-    width: 97.6%;
-    border-radius: 5px;
     padding-left: 16px;
+    width: 99%;
   }
 }
+
 .form-control {
   border: 1px solid;
 }
@@ -55,3 +56,11 @@
 
 }
 
+.tags {
+  margin-top: 0.5%;
+}
+
+// .description:hover {
+//   box-shadow: 3px 3px 3px;
+//   z-index: 1;
+// }

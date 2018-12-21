@@ -1,7 +1,6 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 import signUpRequest from '../../actions/signup.actions';
 import { Form } from './formComponent';
@@ -111,7 +110,7 @@ export const SignupLoginLink = ({ imageClass, image, link, text }) => (
   <div className="col-md-5">
     <div className={imageClass}>
       <figure><img src={image} alt="" /></figure>
-      <Link to={link} className="btn">{text}</Link>
+      <a href={link} className="btn">{text}</a>
     </div>
   </div>
 );

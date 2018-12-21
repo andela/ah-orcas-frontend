@@ -4,8 +4,8 @@ import baseUrl from '../constants/url';
 import { avgRate } from './ratings.actions';
 
 const provideToken = () => {
-  const { token } = JSON.parse(localStorage.getItem('user'));
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (user) { const { token } = user; axios.defaults.headers.common.Authorization = `Bearer ${token}`; }
 };
 
 export const getAllArticles = () => (dispatch) => {
