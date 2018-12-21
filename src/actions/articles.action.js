@@ -45,6 +45,7 @@ export const postArticle = (data, cleardata, handleError) => (dispatch) => {
 
 
 export const viewSingleArticle = slug => (dispatch) => {
+  provideToken();
   const url = `${baseUrl}article/detail/${slug}/`;
   axios.get(url).then((article) => {
     dispatch(
