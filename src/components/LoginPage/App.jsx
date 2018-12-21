@@ -3,7 +3,6 @@ import '../style.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import loginUser from '../../actions/login.action';
 import Alert from './alert';
 import SocialLoginConnected from './SocialLogin';
@@ -108,7 +107,7 @@ export const FormGroup = ({ handleSubmit }) => (
   <div className="form-group form-button">
     <input type="submit" name="signin" id="signin" className="form-submit" value="Log in" onClick={handleSubmit} />
     <div className="forgot-password">
-      <Link to="/resetPassword" className="btn btn-link">Forgot Password?</Link>
+      <a href="/resetPassword" className="btn btn-link">Forgot Password?</a>
     </div>
   </div>
 );

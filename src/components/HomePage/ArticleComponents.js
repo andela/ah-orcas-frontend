@@ -1,7 +1,6 @@
 import React from 'react';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 import baseUrl from '../../constants/url';
 import { ReadMore } from '../../constants/articles';
@@ -9,7 +8,7 @@ import { ReadMore } from '../../constants/articles';
 
 const Body = (props) => {
   const { slug, title, description, time, userimage, username } = props;
-  const url = `${baseUrl}/profile/${username}`;
+  const url = `${baseUrl}/profile/ ${username}`;
   return (
     <div className="card slide" style={{ background: '#FFFFFF' }}>
       <div className="card-text">
@@ -26,17 +25,17 @@ const Body = (props) => {
         <img className="card-img-top" alt="" src="https://picsum.photos/800/200?random" />
         <a href={`/article/detail/${slug}`} onClick={() => (localStorage.setItem('slug', slug))} className="title">
           {
-      title
-    }
+          title
+          }
         </a>
         <div className="lead">
           <p className="text-left">
             {description}
-            <Link to={`/article/detail/${slug}`}>
+            <a href={`/article/detail/${slug}`}>
               <button onClick={() => (localStorage.setItem('slug', slug))} type="button" className="btn" style={{ background: '#009688', color: '#fff' }}>
                 {ReadMore}
               </button>
-            </Link>
+            </a>
           </p>
         </div>
       </div>

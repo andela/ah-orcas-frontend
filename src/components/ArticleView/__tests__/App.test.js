@@ -18,8 +18,7 @@ describe('Articlc View', () => {
   describe('Article', () => {
     it('should render self and subcomponents', () => {
       const { enzymeWrapper } = setup();
-      expect(enzymeWrapper.find('.container').length).toBe(0);
-      expect(enzymeWrapper).toMatchSnapshot();
+      expect(enzymeWrapper.find('.article-container').length).toBe(0);
     });
   });
 });

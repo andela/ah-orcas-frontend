@@ -4,7 +4,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import propTypes from 'prop-types';
 import Alert from '../LoginPage/alert';
-
+import TagComponent from './tagComponent';
 import { TitleHint } from '../../constants/articles';
 
 
@@ -31,8 +31,7 @@ const BodyinputComponent = (props) => {
                   </div>
                 ) : ''
           }
-
-        <input name="title" value={title} onChange={handlechange} className="form-control description" placeholder={TitleHint} />
+        <TagComponent handlechange={handlechange} title={title} TitleHint={TitleHint} />
       </div>
       <div className="form-group-lg description-input">
         <input name="description" value={description} onChange={handlechange} style={{ border: '1px solid' }} className="form-control description" placeholder="Description" />
@@ -58,10 +57,10 @@ BodyinputComponent.propTypes = {
   handlechange: propTypes.func,
   body: propTypes.string,
   description: propTypes.string,
-  buttonDisabled: propTypes.bool.isRequired,
   loading: propTypes.bool,
   success: propTypes.bool,
   error: propTypes.string,
+  buttonDisabled: propTypes.func,
 };
 
 BodyinputComponent.defaultProps = {
@@ -73,6 +72,7 @@ BodyinputComponent.defaultProps = {
   loading: propTypes.bool,
   success: propTypes.bool,
   error: '',
+  buttonDisabled: propTypes.func,
 };
 
 

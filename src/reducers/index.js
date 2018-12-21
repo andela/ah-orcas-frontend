@@ -7,6 +7,7 @@ import loginReducer from './loginReducer';
 import profileReducer from './profile.reducer';
 import userArticlesReducer from './userArticles.reducer';
 import ratingReducer from './ratingReducer';
+import tags from './tags.reducer';
 
 import likesReducer from './likeReducer';
 /*
@@ -26,6 +27,7 @@ const allReducers = combineReducers({
   updateArticle,
   rating: ratingReducer,
   likesReducer,
+  tags,
 });
 
 export default allReducers;

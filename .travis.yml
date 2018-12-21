@@ -19,7 +19,7 @@ install:
 
 # Run the test suites
 script:
-  - npm test -- --coverage
+  - npm test -- --coverage -u
 
 after_script:
  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT # run the test reporter after build
