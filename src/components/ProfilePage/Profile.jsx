@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import Swal from 'sweetalert2';
 import propTypes from 'prop-types';
-
+import ArticleCard from '../HomePage/containers';
 import { getProfileAction, userArticlesAction, updateUserProfileAction } from '../../actions/profile.action';
 
 class Profile extends Component {
@@ -12,18 +12,26 @@ class Profile extends Component {
     super(props);
     this.state = {
       profile: {},
-      profileArticlesData: {},
+      profileArticlesData: [],
       usernameUpdate: '',
       bioUpdate: '',
+      usernameLocal: '',
     };
 
     this.handleEditClick = this.handleEditClick.bind(this);
     this.onSuccess = this.onSuccess.bind(this);
 
+    try {
+      this.state.usernameLocal = JSON.parse(localStorage.getItem('user')).username;
+    } catch (error) {
+      // handle error
+    }
+
     const { username } = this.props.match.params;
 
     getProfileAction(username).payload.then(p => this.setState({ profile: p.data.profile }));
-    userArticlesAction(username).payload.then(p => this.setState({ profileArticlesData: p.data }));
+    userArticlesAction(username).payload.then(p =>
+      this.setState({ profileArticlesData: p.data.results }));
   }
 
   onSuccess = (username) => {
@@ -53,6 +61,21 @@ class Profile extends Component {
   }
 
   render() {
+    const numOfArticles = this.state.profileArticlesData.length;
+    const newArticles = this.state.profileArticlesData.map(article => (
+      <ArticleCard
+        key={article.id}
+        slug={article.slug}
+        title={article.title}
+        article={article}
+        username={article.author.username}
+        timecreated={article.timecreated}
+        description={article.description}
+        comments={article.comments}
+        likes={article.likes}
+        dislikes={article.dislikes}
+      />
+    ));
     return (
       <div className="rela-block container-profile">
         <div className="rela-block profile-card">
@@ -60,9 +83,9 @@ class Profile extends Component {
           <ProfileNameCard username={this.state.profile.username} bio={this.state.profile.bio} />
           <div className="rela-block profile-card-stats">
             <div className="floated profile-stat articles" id="num_works">
-              {this.state.profileArticlesData.count}
+              {numOfArticles}
             </div>
-            {JSON.parse(localStorage.getItem('user')).username === this.state.profile.username
+            {this.state.usernameLocal === this.state.profile.username
               ? (
                 <div className="floated profile-stat">
                   <button type="button" className="btn btn-outline-dark" onClick={() => this.handleEditClick()}>Edit</button>
@@ -76,10 +99,21 @@ class Profile extends Component {
             }
           </div>
         </div>
+        <UserArticles articles={newArticles} />
       </div>
     );
   }
 }
+
+export const UserArticles = ({ articles }) => (
+  <section className="blog-area section">
+    <div className="container">
+      <div className="row">
+        {articles}
+      </div>
+    </div>
+  </section>
+);
 
 export const ProfileNameCard = ({ ...props }) => (
   <div className="rela-block profile-name-container">
@@ -87,6 +121,10 @@ export const ProfileNameCard = ({ ...props }) => (
     <div className="rela-block user-desc" id="user-description">{props.bio}</div>
   </div>
 );
+
+UserArticles.propTypes = {
+  articles: propTypes.array.isRequired,
+};
 
 Profile.propTypes = {
   match: propTypes.shape({

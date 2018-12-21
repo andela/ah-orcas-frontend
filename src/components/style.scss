@@ -313,38 +313,31 @@ label {
   margin-bottom: 10px;
 }
 
-.style-eight {
-  hr {
-    border: 0;
-    border-top: medium double $color-underline;
-    color: $color-gray;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    overflow: visible;
-    padding: 0;
-    text-align: center;
-    }
+hr.style-eight {
+  border: 0;
+  border-top: medium double $color-underline;
+  color: $color-gray;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  overflow: visible;
+  padding: 0;
+  text-align: center;
 }
 
-.style-eight::after {
-  hr {
-    background: $color-bg;
-    color: $color-font;
-    content: "or";
-    display: inline-block;
-    font-size: 1.5em;
-    padding: 0 0.25em;
-    position: relative;
-    top: -0.7em;
-}
+hr.style-eight::after {
+  background: $color-bg;
+  color: $color-font;
+  content: 'or';
+  display: inline-block;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+  position: relative;
+  top: -0.7em;
 }
 
 .btn-social {
   float: left;
-}
-
-.btn-social:first-of-type {
-  margin-right: 7px;
+  margin-left: 1.7px;
 }
 
 .my-img {
