@@ -1,13 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import TagView from '../tagComponent';
+import ResetPassword from '../ResetPassword';
 import storemock from '../../../store';
 
 const tags = [];
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<TagView store={storemock} tags={tags} />)
+    .create(<ResetPassword store={storemock} tags={tags} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

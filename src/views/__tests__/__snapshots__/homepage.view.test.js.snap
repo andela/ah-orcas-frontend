@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="form-input"
+>
+  <div
+    className="article-create-page"
+  >
+    <div
+      className="form-group-lg title-input"
+    >
+      
+      
+      <div
+        style={
+          Object {
+            "float": "left",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="form-group"
+        >
+          <span
+            htmlFor="tag"
+          />
+          <div
+            className="row"
+          >
+            <input
+              className="form-control description"
+              name="title"
+              onChange={[Function]}
+              placeholder="Title"
+              style={
+                Object {
+                  "border": "1px solid",
+                  "marginLeft": "1.5%",
+                  "marginRight": "2%",
+                  "marginTop": "1%",
+                  "width": "47%",
+                }
+              }
+              value=""
+            />
+            <input
+              className="form-control description"
+              name="tag"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              placeholder="add a tag"
+              style={
+                Object {
+                  "border": "1px solid",
+                  "margin": "1%",
+                  "width": "47%",
+                }
+              }
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="form-group-lg description-input"
+    >
+      <input
+        className="form-control description"
+        name="description"
+        onChange={[Function]}
+        placeholder="Description"
+        style={
+          Object {
+            "border": "1px solid",
+          }
+        }
+        value=""
+      />
+    </div>
+    <div
+      className="form-control-lg body-input"
+    >
+      <textarea
+        className="form-control description "
+        name="body"
+        onChange={[Function]}
+        placeholder="Enter Article body here...."
+        style={
+          Object {
+            "border": "1px solid",
+          }
+        }
+        value=""
+      />
+      <button
+        className="publish-btn btn btn-primary"
+        disabled={true}
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#2ebaae",
+          }
+        }
+        type="submit"
+      >
+        Publish
+      </button>
+    </div>
+  </div>
+</div>
+`;

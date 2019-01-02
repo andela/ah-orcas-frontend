@@ -1,29 +1,46 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { deleteArticleApi } from '../../actions/articles.action';
 import './delete.scss';
 
 const edit = require('../../assets/images/edit.png');
 const image = require('../../assets/images/delete.png');
 
+let USER = {};
+USER = JSON.parse(localStorage.getItem('user'));
+
+
 class DeleteArticle extends Component {
-  handleDelete =() => {
-    const { dispatch, data } = this.props;
-    dispatch(deleteArticleApi(data.slug));
+  constructor(props) {
+    super(props);
+    this.state = {
+      author: '',
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState(
+      {
+        author: nextProps.author,
+      },
+    );
   }
 
   render() {
+    const { author } = this.state;
     const { data } = this.props;
     return (
       <div>
         <div className="control-btn">
-          <button className="delete" type="button" onClick={this.handleDelete}>
-            <img className="mybtn" src={image} alt="" />
-          </button>
-          <a href={`/article/update/${data.slug}`} onClick={this.saveArticle}>
-            <img src={edit} alt="" />
-          </a>
+          {USER.username === author.username ? (
+            <div>
+              <button className="delete" type="button" data-toggle="modal" data-target="#exampleModal">
+                <img className="mybtn" src={image} alt="" />
+              </button>
+              <a href={`/article/update/${data.slug}`} onClick={this.saveArticle}>
+                <img src={edit} alt="" />
+              </a>
+            </div>) : ''}
         </div>
       </div>
     );
@@ -32,10 +49,12 @@ class DeleteArticle extends Component {
 
 DeleteArticle.propTypes = {
   data: {},
+  author: propTypes.object,
 };
 
 DeleteArticle.defaultProps = {
   data: {},
+  author: {},
 };
 
 const mapStateToProps = ({ deleteReducer }) => ({
@@ -44,9 +63,6 @@ const mapStateToProps = ({ deleteReducer }) => ({
 DeleteArticle.propTypes = {
   // eslint-disable-next-line react/no-unused-prop-types
   handleDelete: propTypes.func,
-};
-DeleteArticle.propTypes = {
-  dispatch: propTypes.func.isRequired,
 };
 DeleteArticle.defaultProps = {
   handleDelete: propTypes.func,

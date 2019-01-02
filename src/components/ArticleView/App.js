@@ -8,8 +8,8 @@ import Body from './ArticleViewComponents';
 import DeleteArticle from '../ArticleDelete/DeleteArticle';
 import RateArticle from '../RateArticle/rateArticleComponent';
 import AverageRate from '../RateArticle/averageRate';
-
 import LikesDislikes from '../LikeDislike/likedislike';
+import DeleteModal from './DeleteModal/App';
 
 class App extends Component {
   async componentDidMount() {
@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   render() {
-    const { results, rates } = this.props;
+    const { rates, results } = this.props;
     return (
       <div
         className="article-container"
@@ -35,10 +35,11 @@ Average Ratings
           body={results.body}
           slug={results.slug}
         />
+        <DeleteModal title={results.title} data={results} />
         <br />
         <LikesDislikes />
         <RateArticle />
-        <DeleteArticle data={results} />
+        <DeleteArticle author={results.author} data={results} />
       </div>
     );
   }
