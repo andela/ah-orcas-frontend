@@ -40,8 +40,8 @@ export const ArticleInputComponents = () => (
   <ArticleInput />
 );
 
-export const ArticleComponent = () => (
-  <Article />
+export const ArticleComponent = ({ ...props }) => (
+  <Article {...props} />
 );
 
 export const UpdateArticleComponent = () => (

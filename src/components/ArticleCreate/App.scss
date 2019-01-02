@@ -1,3 +1,6 @@
+
+$primary-color: #2ebaae;
+
 .title-input {
   margin-right: 2%;
   margin-top: 2%;
@@ -27,6 +30,26 @@
   width: 20%;
 }
 
+.right {
+  float: right;
+}
+
+.tag {
+  border: 1px solid;
+  margin-left: 1.5%;
+  margin-right: 2%;
+  margin-top: 1%;
+  width: 47%;
+}
+
+.back-btn {
+  background: none;
+  border: 0;
+  color: $primary-color;
+  font-size: 1.5rem;
+  margin-left: 1em;
+}
+
 .body-input {
   padding-left: 16px;
   textarea {
@@ -34,7 +57,7 @@
     font-size: 2rem;
     height: 400px;
     padding-left: 16px;
-    width: 99.5%;
+    width: 99%;
   }
 }
 

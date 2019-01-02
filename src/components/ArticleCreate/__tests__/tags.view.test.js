@@ -1,11 +1,22 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import Tag from '../tagComponent';
+import { shallow } from 'enzyme';
+import { Tag } from '../tagComponent';
 import store from '../../../store';
 
-it('renders correctly', () => {
-  const tree = renderer
-    .create(<Tag store={store} />)
-    .toJSON();
-  expect(tree).toMatchSnapshot();
+
+describe('TagComponent', () => {
+  describe('Tag', () => {
+    it('should render self and subcomponents', () => {
+      const event = {
+        target: {
+          value: 9,
+        },
+      };
+      const spy = jest.spyOn(Tag.prototype, 'handleInputChange');
+      const enzymeWrapper = shallow(<Tag store={store} />);
+      enzymeWrapper.find('input').at(1).simulate('change', event);
+      enzymeWrapper.find('input').at(1).simulate('keydown', event);
+      expect(spy).toHaveBeenCalled();
+    });
+  });
 });

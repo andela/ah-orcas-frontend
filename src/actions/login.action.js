@@ -16,26 +16,23 @@ export const loginFailed = error => ({
 });
 
 
-// dispatch apropriate action for login
-const loginUser = (loginData, props) => {
+const loginUser = (loginData, props) => (dispatch) => {
   const url = `${process.env.REACT_APP_URL}users/login/`;
-  return (dispatch) => {
-    dispatch(loginStart());
-    return axios.post(url,
-      { user: { email: loginData.email, password: loginData.password } }).then(
-      (response) => {
+  loginStart();
+  return axios.post(url, { user: { email: loginData.email, password: loginData.password } })
+    .then((response) => {
+      if (response.status === 200) {
         localStorage.setItem('user', JSON.stringify(response.data.user));
         dispatch(loginSuccess(response));
         props.history.push('/');
-      },
-      (err) => {
-        dispatch(loginFailed(err.response));
-        props.history.push('/login');
-        setTimeout(() => {
-          window.location.reload(1);
-        }, 5000);
-      },
-    );
-  };
+      }
+    })
+    .catch((err) => {
+      dispatch(loginFailed(err.response));
+      props.history.push('/login');
+      setTimeout(() => {
+        window.location.reload(1);
+      }, 5000);
+    });
 };
 export default loginUser;

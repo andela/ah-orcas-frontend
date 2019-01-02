@@ -20,15 +20,39 @@ const ArticleCard = (props) => {
           <div className="blog-image">
             <img src={articleImage} alt="article pic" />
           </div>
-          <a className="avatar" href={profileLink}>
+          <a className="avatar username" href={profileLink}>
             <img src={profileImage} alt="user profile pic" />
           </a>
+          <div className="clear" />
           <div className="blog-info">
-            <h4 className="title"><a href={articleLink}><b>{title}</b></a></h4>
+            <h4 className="title">
+              <a href={articleLink}><b>{title}</b></a>
+              <br />
+              <span className="username"><a href={profileLink}><b>{username}</b></a></span>
+
+            </h4>
             <ul className="post-footer">
-              <li><a href={articleLink}><i className="glyphicon glyphicon-thumbs-up" />{likes}</a></li>
-              <li><a href={articleLink}><i className="glyphicon glyphicon-thumbs-down" />{dislikes}</a></li>
-              <li><a href={articleLink}><i className="glyphicon glyphicon-comment" />{comments}</a></li>
+              <li>
+                <a href={articleLink}>
+                  <i className="glyphicon glyphicon-thumbs-up" />
+                  {likes}
+                </a>
+
+              </li>
+              <li>
+                <a href={articleLink}>
+                  <i className="glyphicon glyphicon-thumbs-down" />
+                  {dislikes}
+                </a>
+
+              </li>
+              <li>
+                <a href={articleLink}>
+                  <i className="glyphicon glyphicon-comment" />
+                  {comments}
+                </a>
+
+              </li>
             </ul>
           </div>
         </div>

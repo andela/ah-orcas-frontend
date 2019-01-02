@@ -90,7 +90,7 @@ ShallowWrapper {
             value=""
           />
           <button
-            className="publish-btn btn btn-primary"
+            className="publish-btn btn btn-primary right"
             disabled={[Function]}
             onClick={[Function]}
             style={
@@ -103,6 +103,20 @@ ShallowWrapper {
             <i
               className="fa fa-spinner fa-spin"
             />
+          </button>
+          <button
+            className="publish-btn left"
+            id="update-form"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "#2ebaae",
+                "textAlign": "back-btn",
+              }
+            }
+            type="submit"
+          >
+            Back
           </button>
         </div>,
       ],
@@ -237,7 +251,7 @@ ShallowWrapper {
               value=""
             />,
             <button
-              className="publish-btn btn btn-primary"
+              className="publish-btn btn btn-primary right"
               disabled={[Function]}
               onClick={[Function]}
               style={
@@ -250,6 +264,20 @@ ShallowWrapper {
               <i
                 className="fa fa-spinner fa-spin"
               />
+            </button>,
+            <button
+              className="publish-btn left"
+              id="update-form"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#2ebaae",
+                  "textAlign": "back-btn",
+                }
+              }
+              type="submit"
+            >
+              Back
             </button>,
           ],
           "className": "form-control-lg body-input",
@@ -282,7 +310,7 @@ ShallowWrapper {
               "children": <i
                 className="fa fa-spinner fa-spin"
               />,
-              "className": "publish-btn btn btn-primary",
+              "className": "publish-btn btn btn-primary right",
               "disabled": [Function],
               "onClick": [Function],
               "style": Object {
@@ -302,6 +330,25 @@ ShallowWrapper {
               "rendered": null,
               "type": "i",
             },
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Back",
+              "className": "publish-btn left",
+              "id": "update-form",
+              "onClick": [Function],
+              "style": Object {
+                "color": "#2ebaae",
+                "textAlign": "back-btn",
+              },
+              "type": "submit",
+            },
+            "ref": null,
+            "rendered": "Back",
             "type": "button",
           },
         ],
@@ -367,7 +414,7 @@ ShallowWrapper {
               value=""
             />
             <button
-              className="publish-btn btn btn-primary"
+              className="publish-btn btn btn-primary right"
               disabled={[Function]}
               onClick={[Function]}
               style={
@@ -380,6 +427,20 @@ ShallowWrapper {
               <i
                 className="fa fa-spinner fa-spin"
               />
+            </button>
+            <button
+              className="publish-btn left"
+              id="update-form"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#2ebaae",
+                  "textAlign": "back-btn",
+                }
+              }
+              type="submit"
+            >
+              Back
             </button>
           </div>,
         ],
@@ -514,7 +575,7 @@ ShallowWrapper {
                 value=""
               />,
               <button
-                className="publish-btn btn btn-primary"
+                className="publish-btn btn btn-primary right"
                 disabled={[Function]}
                 onClick={[Function]}
                 style={
@@ -527,6 +588,20 @@ ShallowWrapper {
                 <i
                   className="fa fa-spinner fa-spin"
                 />
+              </button>,
+              <button
+                className="publish-btn left"
+                id="update-form"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "color": "#2ebaae",
+                    "textAlign": "back-btn",
+                  }
+                }
+                type="submit"
+              >
+                Back
               </button>,
             ],
             "className": "form-control-lg body-input",
@@ -559,7 +634,7 @@ ShallowWrapper {
                 "children": <i
                   className="fa fa-spinner fa-spin"
                 />,
-                "className": "publish-btn btn btn-primary",
+                "className": "publish-btn btn btn-primary right",
                 "disabled": [Function],
                 "onClick": [Function],
                 "style": Object {
@@ -579,6 +654,25 @@ ShallowWrapper {
                 "rendered": null,
                 "type": "i",
               },
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Back",
+                "className": "publish-btn left",
+                "id": "update-form",
+                "onClick": [Function],
+                "style": Object {
+                  "color": "#2ebaae",
+                  "textAlign": "back-btn",
+                },
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": "Back",
               "type": "button",
             },
           ],

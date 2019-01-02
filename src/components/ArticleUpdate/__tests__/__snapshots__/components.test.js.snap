@@ -70,7 +70,7 @@ ShallowWrapper {
             value=""
           />
           <button
-            className="publish-btn btn btn-primary"
+            className="publish-btn btn btn-primary right"
             id="update-form"
             onClick={[Function]}
             style={
@@ -81,6 +81,19 @@ ShallowWrapper {
             type="submit"
           >
             Update
+          </button>
+          <button
+            className="publish-btn left"
+            id="update-form"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "#2ebaae",
+              }
+            }
+            type="submit"
+          >
+            Back
           </button>
         </div>,
       ],
@@ -184,7 +197,7 @@ ShallowWrapper {
               value=""
             />,
             <button
-              className="publish-btn btn btn-primary"
+              className="publish-btn btn btn-primary right"
               id="update-form"
               onClick={[Function]}
               style={
@@ -195,6 +208,19 @@ ShallowWrapper {
               type="submit"
             >
               Update
+            </button>,
+            <button
+              className="publish-btn left"
+              id="update-form"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#2ebaae",
+                }
+              }
+              type="submit"
+            >
+              Back
             </button>,
           ],
           "className": "form-control-lg body-input",
@@ -224,7 +250,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Update",
-              "className": "publish-btn btn btn-primary",
+              "className": "publish-btn btn btn-primary right",
               "id": "update-form",
               "onClick": [Function],
               "style": Object {
@@ -234,6 +260,24 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": "Update",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Back",
+              "className": "publish-btn left",
+              "id": "update-form",
+              "onClick": [Function],
+              "style": Object {
+                "color": "#2ebaae",
+              },
+              "type": "submit",
+            },
+            "ref": null,
+            "rendered": "Back",
             "type": "button",
           },
         ],
@@ -292,7 +336,7 @@ ShallowWrapper {
               value=""
             />
             <button
-              className="publish-btn btn btn-primary"
+              className="publish-btn btn btn-primary right"
               id="update-form"
               onClick={[Function]}
               style={
@@ -303,6 +347,19 @@ ShallowWrapper {
               type="submit"
             >
               Update
+            </button>
+            <button
+              className="publish-btn left"
+              id="update-form"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#2ebaae",
+                }
+              }
+              type="submit"
+            >
+              Back
             </button>
           </div>,
         ],
@@ -406,7 +463,7 @@ ShallowWrapper {
                 value=""
               />,
               <button
-                className="publish-btn btn btn-primary"
+                className="publish-btn btn btn-primary right"
                 id="update-form"
                 onClick={[Function]}
                 style={
@@ -417,6 +474,19 @@ ShallowWrapper {
                 type="submit"
               >
                 Update
+              </button>,
+              <button
+                className="publish-btn left"
+                id="update-form"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "color": "#2ebaae",
+                  }
+                }
+                type="submit"
+              >
+                Back
               </button>,
             ],
             "className": "form-control-lg body-input",
@@ -446,7 +516,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Update",
-                "className": "publish-btn btn btn-primary",
+                "className": "publish-btn btn btn-primary right",
                 "id": "update-form",
                 "onClick": [Function],
                 "style": Object {
@@ -456,6 +526,24 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "Update",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Back",
+                "className": "publish-btn left",
+                "id": "update-form",
+                "onClick": [Function],
+                "style": Object {
+                  "color": "#2ebaae",
+                },
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": "Back",
               "type": "button",
             },
           ],
