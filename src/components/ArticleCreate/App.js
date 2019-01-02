@@ -16,7 +16,7 @@ class App extends React.Component {
       body: '',
       loading: false,
       success: false,
-      buttonDisabled: false,
+      buttonDisabled: true,
       error: false,
       tags: null,
 

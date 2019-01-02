@@ -1,5 +1,10 @@
 import axios from 'axios';
-import { GET_ARTICLES, ADD_ARTICLE, VIEW_ARTICLE, DELETE_ARTICLE, DELETE_ARTICLE_FAILURE, DELETE_ARTICLE_SUCCESS, UPDATE_ARTICLE } from '../constants/articles';
+import { GET_ARTICLES,
+  ADD_ARTICLE, VIEW_ARTICLE,
+  DELETE_ARTICLE,
+  DELETE_ARTICLE_FAILURE,
+  DELETE_ARTICLE_SUCCESS,
+  UPDATE_ARTICLE } from '../constants/articles';
 import baseUrl from '../constants/url';
 import { avgRate } from './ratings.actions';
 
@@ -89,9 +94,15 @@ export const deleteArticleApi = (slug) => {
     return axios.delete(url).then(
       (response) => {
         dispatch(deleteArticleSuccess(response));
+        setTimeout(() => {
+          window.location.assign(process.env.REACT_APP_FRONTEND_URL);
+        }, 1000);
       },
       (err) => {
         dispatch(deleteArticleFailure(err.response));
+        setTimeout(() => {
+          window.location.assign(process.env.REACT_APP_FRONTEND_URL);
+        }, 3000);
       },
     );
   };
@@ -107,7 +118,7 @@ export const updateArticle = (data, slug, handleError, handleSuccess) => (dispat
     });
     handleSuccess();
     setTimeout(() => {
-      window.location.assign(process.env.REACT_APP_FRONTEND_URL);
+      window.location.assign(`${process.env.REACT_APP_FRONTEND_URL}article/detail/${slug}`);
     }, 3000);
   }).catch(() => {
     handleError();

@@ -9,10 +9,10 @@ import UpdateComponent from './UpdateForm';
 
 class App extends React.Component {
   componentDidMount() {
-    const slug = localStorage.getItem('slug');
     const { singleArticle } = this.props;
-    singleArticle(slug);
+    singleArticle(window.location.href.substr(window.location.href.lastIndexOf('/') + 1));
   }
+
 
   render() {
     const { results } = this.props;

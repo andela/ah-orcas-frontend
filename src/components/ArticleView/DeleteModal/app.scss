@@ -1,0 +1,15 @@
+
+$primary-color: #22aaae;
+$red: #f00;
+$ghost-white: #f8f8ff;
+
+
+.del {
+  background-color: $red;
+  color: $ghost-white;
+}
+
+.cancel {
+  background-color: $primary-color;
+  color: $ghost-white;
+}

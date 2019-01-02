@@ -14,7 +14,7 @@ export const Main = () => (
     <Route path="/resetPassword" component={ResetPassword} />
     <Route path="/profile/:username" component={ProfilePage} />
     <Route path="/article/detail/:slug" component={ArticleComponent} />
-    <Route exact path="/article/update/:slug" component={UpdateArticleComponent} />
+    <Route path="/article/update/:slug" component={UpdateArticleComponent} />
     <Route path="/ratings" component={Rate} />
   </Switch>
 );
