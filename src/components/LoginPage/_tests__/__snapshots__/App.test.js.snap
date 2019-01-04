@@ -1,0 +1,917 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login components login renders form group 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FormGroup
+    handleSubmit={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <input
+          className="form-submit"
+          id="signin"
+          name="signin"
+          onClick={[MockFunction]}
+          type="submit"
+          value="Log in"
+        />,
+        <div
+          className="forgot-password"
+        >
+          <a
+            className="btn btn-link"
+            href="/resetPassword"
+          >
+            Forgot Password?
+          </a>
+        </div>,
+      ],
+      "className": "form-group form-button",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "form-submit",
+          "id": "signin",
+          "name": "signin",
+          "onClick": [MockFunction],
+          "type": "submit",
+          "value": "Log in",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <a
+            className="btn btn-link"
+            href="/resetPassword"
+          >
+            Forgot Password?
+          </a>,
+          "className": "forgot-password",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Forgot Password?",
+            "className": "btn btn-link",
+            "href": "/resetPassword",
+          },
+          "ref": null,
+          "rendered": "Forgot Password?",
+          "type": "a",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <input
+            className="form-submit"
+            id="signin"
+            name="signin"
+            onClick={[MockFunction]}
+            type="submit"
+            value="Log in"
+          />,
+          <div
+            className="forgot-password"
+          >
+            <a
+              className="btn btn-link"
+              href="/resetPassword"
+            >
+              Forgot Password?
+            </a>
+          </div>,
+        ],
+        "className": "form-group form-button",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "form-submit",
+            "id": "signin",
+            "name": "signin",
+            "onClick": [MockFunction],
+            "type": "submit",
+            "value": "Log in",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <a
+              className="btn btn-link"
+              href="/resetPassword"
+            >
+              Forgot Password?
+            </a>,
+            "className": "forgot-password",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Forgot Password?",
+              "className": "btn btn-link",
+              "href": "/resetPassword",
+            },
+            "ref": null,
+            "rendered": "Forgot Password?",
+            "type": "a",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`login components login renders social login 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SocialLoginUl />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <Connect(SocialAuth) />,
+      "className": "social-login-new",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <Connect(SocialAuth) />,
+        "className": "social-login-new",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`login components login should render form 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Login
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    userData={Object {}}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="container"
+      >
+        <div
+          className="signin-content col-md-10"
+        >
+          <SignupLoginLink
+            image="1505193005.jpg"
+            imageClass="signin-image"
+            link="/register"
+            text="Click here to register"
+          />
+          <div
+            className="signin-form"
+          />
+          <div
+            className="col-md-5"
+          >
+            <h2
+              className="form-title"
+            >
+              Sign In
+            </h2>
+            <form
+              className="register-form"
+              id="login-form"
+              method="POST"
+            >
+              
+              <FormGroups
+                email=""
+                handleChange={[Function]}
+                password=""
+              />
+              <FormGroup
+                handleSubmit={[Function]}
+              />
+            </form>
+            <hr
+              className="style-eight"
+            />
+            <SocialLoginUl />
+          </div>
+        </div>
+      </div>,
+      "className": "sign-in",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="signin-content col-md-10"
+        >
+          <SignupLoginLink
+            image="1505193005.jpg"
+            imageClass="signin-image"
+            link="/register"
+            text="Click here to register"
+          />
+          <div
+            className="signin-form"
+          />
+          <div
+            className="col-md-5"
+          >
+            <h2
+              className="form-title"
+            >
+              Sign In
+            </h2>
+            <form
+              className="register-form"
+              id="login-form"
+              method="POST"
+            >
+              
+              <FormGroups
+                email=""
+                handleChange={[Function]}
+                password=""
+              />
+              <FormGroup
+                handleSubmit={[Function]}
+              />
+            </form>
+            <hr
+              className="style-eight"
+            />
+            <SocialLoginUl />
+          </div>
+        </div>,
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <SignupLoginLink
+              image="1505193005.jpg"
+              imageClass="signin-image"
+              link="/register"
+              text="Click here to register"
+            />,
+            <div
+              className="signin-form"
+            />,
+            <div
+              className="col-md-5"
+            >
+              <h2
+                className="form-title"
+              >
+                Sign In
+              </h2>
+              <form
+                className="register-form"
+                id="login-form"
+                method="POST"
+              >
+                
+                <FormGroups
+                  email=""
+                  handleChange={[Function]}
+                  password=""
+                />
+                <FormGroup
+                  handleSubmit={[Function]}
+                />
+              </form>
+              <hr
+                className="style-eight"
+              />
+              <SocialLoginUl />
+            </div>,
+          ],
+          "className": "signin-content col-md-10",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "image": "1505193005.jpg",
+              "imageClass": "signin-image",
+              "link": "/register",
+              "text": "Click here to register",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "signin-form",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h2
+                  className="form-title"
+                >
+                  Sign In
+                </h2>,
+                <form
+                  className="register-form"
+                  id="login-form"
+                  method="POST"
+                >
+                  
+                  <FormGroups
+                    email=""
+                    handleChange={[Function]}
+                    password=""
+                  />
+                  <FormGroup
+                    handleSubmit={[Function]}
+                  />
+                </form>,
+                <hr
+                  className="style-eight"
+                />,
+                <SocialLoginUl />,
+              ],
+              "className": "col-md-5",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Sign In",
+                  "className": "form-title",
+                },
+                "ref": null,
+                "rendered": "Sign In",
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    Array [],
+                    "",
+                    <FormGroups
+                      email=""
+                      handleChange={[Function]}
+                      password=""
+                    />,
+                    <FormGroup
+                      handleSubmit={[Function]}
+                    />,
+                  ],
+                  "className": "register-form",
+                  "id": "login-form",
+                  "method": "POST",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "email": "",
+                      "handleChange": [Function],
+                      "password": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "handleSubmit": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": "form",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "style-eight",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "hr",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="container"
+        >
+          <div
+            className="signin-content col-md-10"
+          >
+            <SignupLoginLink
+              image="1505193005.jpg"
+              imageClass="signin-image"
+              link="/register"
+              text="Click here to register"
+            />
+            <div
+              className="signin-form"
+            />
+            <div
+              className="col-md-5"
+            >
+              <h2
+                className="form-title"
+              >
+                Sign In
+              </h2>
+              <form
+                className="register-form"
+                id="login-form"
+                method="POST"
+              >
+                
+                <FormGroups
+                  email=""
+                  handleChange={[Function]}
+                  password=""
+                />
+                <FormGroup
+                  handleSubmit={[Function]}
+                />
+              </form>
+              <hr
+                className="style-eight"
+              />
+              <SocialLoginUl />
+            </div>
+          </div>
+        </div>,
+        "className": "sign-in",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="signin-content col-md-10"
+          >
+            <SignupLoginLink
+              image="1505193005.jpg"
+              imageClass="signin-image"
+              link="/register"
+              text="Click here to register"
+            />
+            <div
+              className="signin-form"
+            />
+            <div
+              className="col-md-5"
+            >
+              <h2
+                className="form-title"
+              >
+                Sign In
+              </h2>
+              <form
+                className="register-form"
+                id="login-form"
+                method="POST"
+              >
+                
+                <FormGroups
+                  email=""
+                  handleChange={[Function]}
+                  password=""
+                />
+                <FormGroup
+                  handleSubmit={[Function]}
+                />
+              </form>
+              <hr
+                className="style-eight"
+              />
+              <SocialLoginUl />
+            </div>
+          </div>,
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <SignupLoginLink
+                image="1505193005.jpg"
+                imageClass="signin-image"
+                link="/register"
+                text="Click here to register"
+              />,
+              <div
+                className="signin-form"
+              />,
+              <div
+                className="col-md-5"
+              >
+                <h2
+                  className="form-title"
+                >
+                  Sign In
+                </h2>
+                <form
+                  className="register-form"
+                  id="login-form"
+                  method="POST"
+                >
+                  
+                  <FormGroups
+                    email=""
+                    handleChange={[Function]}
+                    password=""
+                  />
+                  <FormGroup
+                    handleSubmit={[Function]}
+                  />
+                </form>
+                <hr
+                  className="style-eight"
+                />
+                <SocialLoginUl />
+              </div>,
+            ],
+            "className": "signin-content col-md-10",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "image": "1505193005.jpg",
+                "imageClass": "signin-image",
+                "link": "/register",
+                "text": "Click here to register",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "signin-form",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h2
+                    className="form-title"
+                  >
+                    Sign In
+                  </h2>,
+                  <form
+                    className="register-form"
+                    id="login-form"
+                    method="POST"
+                  >
+                    
+                    <FormGroups
+                      email=""
+                      handleChange={[Function]}
+                      password=""
+                    />
+                    <FormGroup
+                      handleSubmit={[Function]}
+                    />
+                  </form>,
+                  <hr
+                    className="style-eight"
+                  />,
+                  <SocialLoginUl />,
+                ],
+                "className": "col-md-5",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Sign In",
+                    "className": "form-title",
+                  },
+                  "ref": null,
+                  "rendered": "Sign In",
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      Array [],
+                      "",
+                      <FormGroups
+                        email=""
+                        handleChange={[Function]}
+                        password=""
+                      />,
+                      <FormGroup
+                        handleSubmit={[Function]}
+                      />,
+                    ],
+                    "className": "register-form",
+                    "id": "login-form",
+                    "method": "POST",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "email": "",
+                        "handleChange": [Function],
+                        "password": "",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "handleSubmit": [Function],
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "form",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "style-eight",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

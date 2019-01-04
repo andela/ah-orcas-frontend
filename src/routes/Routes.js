@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import store from '../store';
 import { HomePageView, LoginPage, Rate, ArticleComponent, Register, Header, Footer, ResetPassword,
-  ArticleInputComponents, UpdateArticleComponent, ProfilePage } from '../views/HomePage';
+  ArticleInputComponents, UpdateArticleComponent, ProfilePage, reportArticle } from '../views/HomePage';
 
 export const Main = () => (
   <Switch>
@@ -16,6 +16,7 @@ export const Main = () => (
     <Route path="/article/detail/:slug" component={ArticleComponent} />
     <Route path="/article/update/:slug" component={UpdateArticleComponent} />
     <Route path="/ratings" component={Rate} />
+    <Route path="/article/report" component={reportArticle} />
   </Switch>
 );
 

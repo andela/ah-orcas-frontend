@@ -41,11 +41,13 @@ describe('login components', () => {
       store = mockStore(initialState);
       const wrapper = shallow(<Login store={store} />);
       expect(wrapper.find('.register-form').length).toEqual(1);
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('renders social login', () => {
       const wrapper = shallow(<SocialLoginUl />);
       expect(wrapper.find('.social-login-new').length).toEqual(1);
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('renders form group', () => {
@@ -55,6 +57,7 @@ describe('login components', () => {
       const wrapper = shallow(<FormGroup {...prop} />);
       expect(wrapper.find('.form-group').length).toEqual(1);
       expect(wrapper.find('#signin').length).toEqual(1);
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });
