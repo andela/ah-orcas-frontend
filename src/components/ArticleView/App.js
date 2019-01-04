@@ -68,11 +68,12 @@ Average Ratings
           <br />
           <LikesDislikes />
           <RateArticle id={results.id} />
-          <div className="reportlink">
-            {USER && USER.username === username ? '' : (
-              <a href="/article/report">Report Article</a>
-            ) }
-          </div>
+          {USER === null ? '' : (
+            <div className="reportlink">
+              {USER && USER.username === username ? '' : (
+                <a href="/article/report">Report Article</a>
+              ) }
+            </div>)}
           <br />
           <DeleteArticle author={results.author} data={results} />
         </div>

@@ -20,12 +20,13 @@
     "prop-types": "^15.5.7",
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
+    "react-content-loader": "^3.4.1",
     "react-dom": "^16.6.3",
     "react-fontawesome": "^1.6.1",
     "react-redux": "^5.1.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
+    "react-scripts": "^2.1.2",
     "react-share": "^2.4.0",
     "react-social-login": "^3.4.2",
     "react-star-ratings": "^2.3.0",
@@ -92,8 +93,13 @@
       "!src/utils/user.util.js",
       "!src/serviceWorker.js",
       "!src/routes/Routes.js",
+      "!src/serviceWorker.js",
       "!src/actions/articles.action.js",
       "!src/components/HomePage/App.js",
+      "!src/actions/login.action.js",
+      "!src/actions/sociallogin.action.js",
+      "!src/actions/tags.action.js",
+      "!src/components/reports/reports.js",
       "!src/components/ResetPassword/ResetPassword.js"
     ]
   }
