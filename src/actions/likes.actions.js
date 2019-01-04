@@ -39,7 +39,7 @@ export const dislikesArticleActions = slug1 => dispatch => ({
         dispatch(dislikesGet(slug1));
       }
     }).catch(() => {
-      window.location.assign(`${process.env.REACT_APP_FRONTEND_URL}login`);
+      window.location.assign(`${process.env.REACT_APP_FRONTEND_URL}/login`);
     }),
 });
 
@@ -54,6 +54,6 @@ export const likesArticleActions = slug1 => dispatch => ({
         dispatch(dislikesGet(slug1));
       }
     }).catch(() => {
-      window.location.assign(`${process.env.REACT_APP_FRONTEND_URL}login`);
+      window.location.assign(`${process.env.REACT_APP_FRONTEND_URL}/login`);
     }),
 });
