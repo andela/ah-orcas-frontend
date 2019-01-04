@@ -13,8 +13,8 @@ const provideToken = () => {
   if (user) { const { token } = user; axios.defaults.headers.common.Authorization = `Bearer ${token}`; }
 };
 
-export const getAllArticles = () => (dispatch) => {
-  axios.get(`${baseUrl}article/`)
+export const getAllArticles = page => (dispatch) => {
+  axios.get(`${baseUrl}article?page=${page}`)
     .then((articles) => {
       articles.data.results.map((article) => {
         const newArticle = article;

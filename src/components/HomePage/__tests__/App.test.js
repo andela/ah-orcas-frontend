@@ -5,7 +5,7 @@ import HomePage from '../App';
 
 function setup() {
   const props = {
-    login: jest.fn(),
+    articles: [],
   };
   const enzymeWrapper = shallow(<HomePage {...props} store={store} />);
   return {
@@ -14,9 +14,9 @@ function setup() {
   };
 }
 
-describe('login components', () => {
-  describe('login', () => {
-    it('shou ld render self and subcomponents', () => {
+describe('homepage component', () => {
+  describe('homepage', () => {
+    it('should render self and subcomponents', () => {
       const { enzymeWrapper } = setup();
       expect(enzymeWrapper).toMatchSnapshot();
       expect(enzymeWrapper.find('div').length).toBe(0);
