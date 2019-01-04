@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { RATE_ARTICLE, RATE_FAILURE, AVERAGE_RATING } from '../constants/rating';
 
-const id = localStorage.getItem('article_id');
+// const id = localStorage.getItem('article_id');
 
 // action creator for rating an article
 export const addRating = response => ({
@@ -35,7 +35,7 @@ export const avgRate = data => (dispatch) => {
 // rate a given article provided its slug - dispatch rate article action
 // update the average rating by dispatching the avgRate function
 // id is the article id
-export const rateArticle = data => (dispatch) => {
+export const rateArticle = (data, id) => (dispatch) => {
   const url = process.env.REACT_APP_URL;
   return axios.post(`${url}article/${data.slug}/rate/`, { user: data })
     .then((response) => {

@@ -30,19 +30,10 @@ exports[`renders correctly 1`] = `
             className="row"
           >
             <input
-              className="form-control description"
+              className="form-control description tag"
               name="title"
               onChange={[Function]}
               placeholder="Title"
-              style={
-                Object {
-                  "border": "1px solid",
-                  "marginLeft": "1.5%",
-                  "marginRight": "2%",
-                  "marginTop": "1%",
-                  "width": "47%",
-                }
-              }
               value=""
             />
             <input
@@ -96,7 +87,7 @@ exports[`renders correctly 1`] = `
         value=""
       />
       <button
-        className="publish-btn btn btn-primary"
+        className="publish-btn btn btn-primary right"
         disabled={true}
         onClick={[Function]}
         style={
@@ -107,6 +98,20 @@ exports[`renders correctly 1`] = `
         type="submit"
       >
         Publish
+      </button>
+      <button
+        className="publish-btn left"
+        id="update-form"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#2ebaae",
+            "textAlign": "back-btn",
+          }
+        }
+        type="submit"
+      >
+        Back
       </button>
     </div>
   </div>

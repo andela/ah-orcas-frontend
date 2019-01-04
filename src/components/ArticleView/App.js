@@ -40,34 +40,42 @@ class App extends Component {
     const { rates, results } = this.props;
     const { username } = this.state;
     return (
-      <div
-        className="article-container"
-      >
-        <p className="average">
+      <div>
+        <div
+          className="article-container"
+        >
+          <button
+            onClick={() => { window.history.back(); }}
+            id="update-form"
+            type="submit"
+            className="back-btn"
+          >
+        Back
+          </button>
+          <p className="average">
 Average Ratings
-          <AverageRate rates={rates} />
-        </p>
-        <Body
-          tags={results.tags}
-          username={results.title}
-          title={results.title}
-          descion={results.description}
-          body={results.body}
-          slug={results.slug}
-        />
-        <DeleteModal title={results.title} data={results} />
-        <br />
-        <LikesDislikes />
-        <RateArticle />
-        <div className="reportlink">
-          {USER && USER.username === username ? '' : (
-            <a href="/article/report">Report Article</a>
-          ) }
+            <AverageRate id={results.id} rates={rates} />
+          </p>
+          <Body
+            tags={results.tags}
+            title={results.title}
+            username={username}
+            descion={results.description}
+            body={results.body}
+            slug={results.slug}
+          />
+          <DeleteModal title={results.title} data={results} />
+          <br />
+          <LikesDislikes />
+          <RateArticle id={results.id} />
+          <div className="reportlink">
+            {USER && USER.username === username ? '' : (
+              <a href="/article/report">Report Article</a>
+            ) }
+          </div>
+          <br />
+          <DeleteArticle author={results.author} data={results} />
         </div>
-        <br />
-        <DeleteArticle author={results.author} data={results} />
-        {/* Attributes have been borrowed / re-used from forgot password link on login page. */}
-
       </div>
     );
   }

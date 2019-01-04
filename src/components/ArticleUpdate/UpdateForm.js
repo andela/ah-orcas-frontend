@@ -98,10 +98,19 @@ export class Form extends React.Component {
             onClick={this.submitUpdate}
             id="update-form"
             type="submit"
-            className="publish-btn btn btn-primary"
+            className="publish-btn btn btn-primary right"
             style={{ background: '#2ebaae' }}
           >
             {loading ? <i className="fa fa-spinner fa-spin" /> : 'Update'}
+          </button>
+          <button
+            onClick={() => { window.history.back(); }}
+            id="update-form"
+            type="submit"
+            className="publish-btn left"
+            style={{ color: '#2ebaae' }}
+          >
+            Back
           </button>
         </div>
       </div>);

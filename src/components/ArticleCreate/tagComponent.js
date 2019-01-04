@@ -17,7 +17,6 @@ class TagInput extends React.Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleInputKeyDown = this.handleInputKeyDown.bind(this);
-    this.handleRemoveItem = this.handleRemoveItem.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -41,14 +40,6 @@ class TagInput extends React.Component {
         input: '',
       });
     }
-  }
-
-  handleRemoveItem(index) {
-    return () => {
-      this.setState(state => ({
-        items: state.filter((item, i) => i !== index),
-      }));
-    };
   }
 
   render() {
@@ -80,15 +71,8 @@ class TagInput extends React.Component {
               name="title"
               value={title}
               onChange={handlechange}
-              className="form-control description"
+              className="form-control description tag"
               placeholder={TitleHint}
-              style={{
-                border: '1px solid',
-                marginLeft: '1.5%',
-                marginTop: '1%',
-                marginRight: '2%',
-
-                width: '47%' }}
             />
             <input
               value={input}
@@ -142,3 +126,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TagInput);
+export const Tag = TagInput;

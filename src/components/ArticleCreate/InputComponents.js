@@ -41,11 +41,20 @@ const BodyinputComponent = (props) => {
         <button
           onClick={submitArticle}
           type="submit"
-          className="publish-btn btn btn-primary"
+          className="publish-btn btn btn-primary right"
           style={{ background: '#2ebaae' }}
           disabled={buttonDisabled}
         >
           {loading ? <i className="fa fa-spinner fa-spin" /> : 'Publish'}
+        </button>
+        <button
+          onClick={() => { window.history.back(); }}
+          id="update-form"
+          type="submit"
+          className="publish-btn left"
+          style={{ textAlign: 'back-btn', color: '#2ebaae' }}
+        >
+          Back
         </button>
       </div>
     </div>);

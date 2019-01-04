@@ -1,11 +1,22 @@
 $color-main: #2ebaae;
 $color-bg: #fff;
 
+
 .title-input {
   margin-left: 0.8%;
   margin-right: 2%;
   margin-top: 7%;
 
+}
+
+.right {
+  float: right;
+}
+
+.back-btn {
+  background: none;
+  border: 0;
+  float: left;
 }
 
 .form-input {
@@ -16,7 +27,6 @@ $color-bg: #fff;
 }
 
 .publish-btn {
-  float: right;
   font-size: 2rem;
   margin-top: 1%;
   width: 20%;

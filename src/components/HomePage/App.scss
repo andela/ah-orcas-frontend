@@ -41,8 +41,6 @@ $navbar-height: 100%;
 .signup {
   cursor: pointer;
   font-size: 22px;
-  font-weight: bolder;
-  text-align: center;
   text-transform: uppercase;
   width: 88%;
 }
@@ -109,7 +107,7 @@ span {
 
 .title {
   color: $black;
-  text-align: center;
+
 }
 
 .card:hover {
@@ -177,8 +175,8 @@ span {
 }
 
 .username {
-  float: left;
-  margin-left: 1%;
+  text-align: center;
+  font-size: 1rem;
 }
 
 .userimage {

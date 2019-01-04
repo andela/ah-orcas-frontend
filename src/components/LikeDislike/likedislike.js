@@ -11,6 +11,8 @@ import {
   dislikesArticleActions,
 } from '../../actions/likes.actions';
 
+const slug = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
+
 export class LikesDislikes extends Component {
   constructor(props) {
     super(props);
@@ -22,8 +24,8 @@ export class LikesDislikes extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(likesGet(localStorage.getItem('slug')));
-    dispatch(dislikesGet(localStorage.getItem('slug')));
+    dispatch(likesGet(slug));
+    dispatch(dislikesGet(slug));
   }
 
   nFormatter = (number) => {
@@ -51,7 +53,7 @@ export class LikesDislikes extends Component {
   handleLikeClick = () => {
     const { dispatch } = this.props;
     this.setState({ likeloading: true });
-    dispatch(likesArticleActions(localStorage.getItem('slug')));
+    dispatch(likesArticleActions(slug));
     setTimeout(() => {
       this.setState({ likeloading: false });
     }, 1000);
@@ -60,7 +62,7 @@ export class LikesDislikes extends Component {
   handleDislikeClick = () => {
     const { dispatch } = this.props;
     this.setState({ dislikeloading: true });
-    dispatch(dislikesArticleActions(localStorage.getItem('slug')));
+    dispatch(dislikesArticleActions(slug));
     setTimeout(() => {
       this.setState({ dislikeloading: false });
       this.forceUpdate();

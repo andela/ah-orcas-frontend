@@ -191,12 +191,12 @@ input {
   font-family: Poppins;
   font-size: 10px;
   padding: 6px 30px;
-  width: 100%;
+  width: 150%;
 }
 
 label {
   color: $color-secondary;
-  left: 0;
+  left: 0; 
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

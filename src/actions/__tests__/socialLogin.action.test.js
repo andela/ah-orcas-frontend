@@ -1,4 +1,4 @@
-import { socialSuccess } from '../sociallogin.action';
+import SocialAuthAct, { socialSuccess } from '../sociallogin.action';
 
 describe('actions', () => {
   it('it should create social login action', () => {
@@ -8,5 +8,12 @@ describe('actions', () => {
       payload,
     };
     expect(socialSuccess(payload)).toEqual(expectedAction);
+  });
+});
+
+describe('should call api', () => {
+  const socialData = { provider: 'google', access_token: 'jddcgvyd' };
+  it('should expect an object with response', () => {
+    SocialAuthAct(socialData);
   });
 });

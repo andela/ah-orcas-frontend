@@ -32,7 +32,7 @@ class DeleteArticle extends Component {
     return (
       <div>
         <div className="control-btn">
-          {USER.username === author.username ? (
+          {USER && USER.username === author.username ? (
             <div>
               <button className="delete" type="button" data-toggle="modal" data-target="#exampleModal">
                 <img className="mybtn" src={image} alt="" />
